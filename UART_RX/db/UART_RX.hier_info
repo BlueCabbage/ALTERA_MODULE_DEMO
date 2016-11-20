@@ -1,0 +1,191 @@
+|top_module
+CLK => CLK.IN2
+RSTn => RSTn.IN2
+RX_Pin_In => RX_Pin_In.IN1
+NUM_Data[0] <= CTL_MODULE:U4.Num_Data
+NUM_Data[1] <= CTL_MODULE:U4.Num_Data
+NUM_Data[2] <= CTL_MODULE:U4.Num_Data
+NUM_Data[3] <= CTL_MODULE:U4.Num_Data
+
+
+|top_module|RX_MODULE:U3
+CLK => CLK.IN2
+RSTn => RSTn.IN4
+RX_Pin_In => RX_Pin_In.IN2
+RX_En_Sig => RX_En_Sig.IN1
+RX_Done_Sig <= <GND>
+RX_Data[0] <= RX_CTL_MODULE:U2.RX_Data
+RX_Data[1] <= RX_CTL_MODULE:U2.RX_Data
+RX_Data[2] <= RX_CTL_MODULE:U2.RX_Data
+RX_Data[3] <= RX_CTL_MODULE:U2.RX_Data
+RX_Data[4] <= RX_CTL_MODULE:U2.RX_Data
+RX_Data[5] <= RX_CTL_MODULE:U2.RX_Data
+RX_Data[6] <= RX_CTL_MODULE:U2.RX_Data
+RX_Data[7] <= RX_CTL_MODULE:U2.RX_Data
+
+
+|top_module|RX_MODULE:U3|H2L_DETECT_MODULE:U1
+CLK => H2L_F2.CLK
+CLK => H2L_F1.CLK
+RSTn => H2L_F2.PRESET
+RSTn => H2L_F1.PRESET
+RX_Pin_In => H2L_F1.DATAIN
+H2L_Sig <= H2L_Sig.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_module|RX_MODULE:U3|RX_BPS_MODULE:U10
+CLK => rCount_BPS[0].CLK
+CLK => rCount_BPS[1].CLK
+CLK => rCount_BPS[2].CLK
+CLK => rCount_BPS[3].CLK
+CLK => rCount_BPS[4].CLK
+CLK => rCount_BPS[5].CLK
+CLK => rCount_BPS[6].CLK
+CLK => rCount_BPS[7].CLK
+CLK => rCount_BPS[8].CLK
+CLK => rCount_BPS[9].CLK
+CLK => rCount_BPS[10].CLK
+CLK => rCount_BPS[11].CLK
+CLK => rCount_BPS[12].CLK
+RSTn => rCount_BPS[0].ACLR
+RSTn => rCount_BPS[1].ACLR
+RSTn => rCount_BPS[2].ACLR
+RSTn => rCount_BPS[3].ACLR
+RSTn => rCount_BPS[4].ACLR
+RSTn => rCount_BPS[5].ACLR
+RSTn => rCount_BPS[6].ACLR
+RSTn => rCount_BPS[7].ACLR
+RSTn => rCount_BPS[8].ACLR
+RSTn => rCount_BPS[9].ACLR
+RSTn => rCount_BPS[10].ACLR
+RSTn => rCount_BPS[11].ACLR
+RSTn => rCount_BPS[12].ACLR
+Count_Sig => rCount_BPS.OUTPUTSELECT
+Count_Sig => rCount_BPS.OUTPUTSELECT
+Count_Sig => rCount_BPS.OUTPUTSELECT
+Count_Sig => rCount_BPS.OUTPUTSELECT
+Count_Sig => rCount_BPS.OUTPUTSELECT
+Count_Sig => rCount_BPS.OUTPUTSELECT
+Count_Sig => rCount_BPS.OUTPUTSELECT
+Count_Sig => rCount_BPS.OUTPUTSELECT
+Count_Sig => rCount_BPS.OUTPUTSELECT
+Count_Sig => rCount_BPS.OUTPUTSELECT
+Count_Sig => rCount_BPS.OUTPUTSELECT
+Count_Sig => rCount_BPS.OUTPUTSELECT
+Count_Sig => rCount_BPS.OUTPUTSELECT
+BPS_CLK <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_module|RX_MODULE:U3|RX_CTL_MODULE:U2
+CLK => isDone.CLK
+CLK => isCount.CLK
+CLK => rData[0].CLK
+CLK => rData[1].CLK
+CLK => rData[2].CLK
+CLK => rData[3].CLK
+CLK => rData[4].CLK
+CLK => rData[5].CLK
+CLK => rData[6].CLK
+CLK => rData[7].CLK
+CLK => state_index[0].CLK
+CLK => state_index[1].CLK
+CLK => state_index[2].CLK
+CLK => state_index[3].CLK
+RSTn => isDone.ACLR
+RSTn => isCount.ACLR
+RSTn => rData[0].ACLR
+RSTn => rData[1].ACLR
+RSTn => rData[2].ACLR
+RSTn => rData[3].ACLR
+RSTn => rData[4].ACLR
+RSTn => rData[5].ACLR
+RSTn => rData[6].ACLR
+RSTn => rData[7].ACLR
+RSTn => state_index[0].ACLR
+RSTn => state_index[1].ACLR
+RSTn => state_index[2].ACLR
+RSTn => state_index[3].ACLR
+H2L_Sig => state_index.OUTPUTSELECT
+H2L_Sig => state_index.OUTPUTSELECT
+H2L_Sig => state_index.OUTPUTSELECT
+H2L_Sig => state_index.OUTPUTSELECT
+H2L_Sig => isCount.OUTPUTSELECT
+RX_Pin_In => rData.DATAB
+RX_Pin_In => rData.DATAB
+RX_Pin_In => rData.DATAB
+RX_Pin_In => rData.DATAB
+RX_Pin_In => rData.DATAB
+RX_Pin_In => rData.DATAB
+RX_Pin_In => rData.DATAB
+RX_Pin_In => rData.DATAB
+BPS_CLK => state_index.OUTPUTSELECT
+BPS_CLK => state_index.OUTPUTSELECT
+BPS_CLK => state_index.OUTPUTSELECT
+BPS_CLK => state_index.OUTPUTSELECT
+BPS_CLK => state_index.OUTPUTSELECT
+BPS_CLK => rData.OUTPUTSELECT
+BPS_CLK => rData.OUTPUTSELECT
+BPS_CLK => rData.OUTPUTSELECT
+BPS_CLK => rData.OUTPUTSELECT
+BPS_CLK => rData.OUTPUTSELECT
+BPS_CLK => rData.OUTPUTSELECT
+BPS_CLK => rData.OUTPUTSELECT
+BPS_CLK => rData.OUTPUTSELECT
+BPS_CLK => state_index.OUTPUTSELECT
+BPS_CLK => state_index.OUTPUTSELECT
+BPS_CLK => state_index.OUTPUTSELECT
+BPS_CLK => state_index.OUTPUTSELECT
+BPS_CLK => state_index.OUTPUTSELECT
+BPS_CLK => state_index.OUTPUTSELECT
+BPS_CLK => state_index.OUTPUTSELECT
+BPS_CLK => isDone.OUTPUTSELECT
+BPS_CLK => isCount.OUTPUTSELECT
+RX_En_Sig => isDone.ENA
+RX_En_Sig => state_index[3].ENA
+RX_En_Sig => state_index[2].ENA
+RX_En_Sig => state_index[1].ENA
+RX_En_Sig => state_index[0].ENA
+RX_En_Sig => rData[7].ENA
+RX_En_Sig => rData[6].ENA
+RX_En_Sig => rData[5].ENA
+RX_En_Sig => rData[4].ENA
+RX_En_Sig => rData[3].ENA
+RX_En_Sig => rData[2].ENA
+RX_En_Sig => rData[1].ENA
+RX_En_Sig => rData[0].ENA
+RX_En_Sig => isCount.ENA
+Count_Sig <= isCount.DB_MAX_OUTPUT_PORT_TYPE
+RX_Data[0] <= rData[0].DB_MAX_OUTPUT_PORT_TYPE
+RX_Data[1] <= rData[1].DB_MAX_OUTPUT_PORT_TYPE
+RX_Data[2] <= rData[2].DB_MAX_OUTPUT_PORT_TYPE
+RX_Data[3] <= rData[3].DB_MAX_OUTPUT_PORT_TYPE
+RX_Data[4] <= rData[4].DB_MAX_OUTPUT_PORT_TYPE
+RX_Data[5] <= rData[5].DB_MAX_OUTPUT_PORT_TYPE
+RX_Data[6] <= rData[6].DB_MAX_OUTPUT_PORT_TYPE
+RX_Data[7] <= rData[7].DB_MAX_OUTPUT_PORT_TYPE
+RX_Done_Sig <= isDone.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_module|CTL_MODULE:U4
+CLK => isEn.CLK
+RSTn => isEn.ENA
+RX_Done_Sig => isEn.DATAIN
+RX_Data[0] => ~NO_FANOUT~
+RX_Data[1] => ~NO_FANOUT~
+RX_Data[2] => ~NO_FANOUT~
+RX_Data[3] => ~NO_FANOUT~
+RX_Data[4] => ~NO_FANOUT~
+RX_Data[5] => ~NO_FANOUT~
+RX_Data[6] => ~NO_FANOUT~
+RX_Data[7] => ~NO_FANOUT~
+RX_En_Sig <= isEn.DB_MAX_OUTPUT_PORT_TYPE
+Num_Data[0] <= <GND>
+Num_Data[1] <= <GND>
+Num_Data[2] <= <GND>
+Num_Data[3] <= <GND>
+Num_Data[4] <= <GND>
+Num_Data[5] <= <GND>
+Num_Data[6] <= <GND>
+Num_Data[7] <= <GND>
+
+

@@ -1,0 +1,14 @@
+Partition Merge Status : Successful - Thu Nov 17 21:31:38 2016
+Quartus II 64-Bit Version : 12.1 Build 177 11/07/2012 SJ Full Version
+Revision Name : SPI_LCD_12864
+Top-level Entity Name : top_module
+Family : Cyclone IV E
+Total logic elements : 729
+    Total combinational functions : 561
+    Dedicated logic registers : 482
+Total registers : 482
+Total pins : 6
+Total virtual pins : 0
+Total memory bits : 12,288
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

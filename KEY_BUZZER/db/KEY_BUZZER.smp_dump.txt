@@ -1,0 +1,7 @@
+
+State Machine - |top_module|DELAY_MODULE:U_delay_module_Inst|state_index
+Name state_index.11 state_index.10 state_index.01 state_index.00 
+state_index.00 0 0 0 0 
+state_index.01 0 0 1 1 
+state_index.10 0 1 0 1 
+state_index.11 1 0 0 1 

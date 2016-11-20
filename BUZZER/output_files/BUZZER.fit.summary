@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sun Nov 13 22:21:07 2016
+Quartus II 64-Bit Version : 12.1 Build 177 11/07/2012 SJ Full Version
+Revision Name : BUZZER
+Top-level Entity Name : top_module
+Family : Cyclone IV E
+Device : EP4CE40F23C6
+Timing Models : Final
+Total logic elements : 123 / 39,600 ( < 1 % )
+    Total combinational functions : 122 / 39,600 ( < 1 % )
+    Dedicated logic registers : 62 / 39,600 ( < 1 % )
+Total registers : 62
+Total pins : 3 / 329 ( < 1 % )
+Total virtual pins : 0
+Total memory bits : 0 / 1,161,216 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 232 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

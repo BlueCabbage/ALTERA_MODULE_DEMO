@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sat Nov 19 21:49:52 2016
+Quartus II 64-Bit Version : 12.1 Build 177 11/07/2012 SJ Full Version
+Revision Name : DS1302
+Top-level Entity Name : top_module
+Family : Cyclone IV E
+Device : EP4CE15F17C8
+Timing Models : Final
+Total logic elements : 174 / 15,408 ( 1 % )
+    Total combinational functions : 174 / 15,408 ( 1 % )
+    Dedicated logic registers : 49 / 15,408 ( < 1 % )
+Total registers : 49
+Total pins : 9 / 166 ( 5 % )
+Total virtual pins : 0
+Total memory bits : 0 / 516,096 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 112 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

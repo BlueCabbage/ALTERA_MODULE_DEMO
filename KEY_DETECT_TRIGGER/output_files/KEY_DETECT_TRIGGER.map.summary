@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sun Nov 13 21:38:16 2016
+Quartus II 64-Bit Version : 12.1 Build 177 11/07/2012 SJ Full Version
+Revision Name : KEY_DETECT_TRIGGER
+Top-level Entity Name : top_module
+Family : Cyclone IV E
+Total logic elements : 65
+    Total combinational functions : 62
+    Dedicated logic registers : 43
+Total registers : 43
+Total pins : 4
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

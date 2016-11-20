@@ -1,0 +1,16 @@
+vendor_name = ModelSim
+source_file = 1, D:/FPGA_PROC/ALTART_MODULE_PROC/UART_RX/H2L_DETECT_MODULE.v
+source_file = 1, D:/FPGA_PROC/ALTART_MODULE_PROC/UART_RX/RX_BPS_MODULE.v
+source_file = 1, D:/FPGA_PROC/ALTART_MODULE_PROC/UART_RX/RX_CTL_MODULE.v
+source_file = 1, D:/FPGA_PROC/ALTART_MODULE_PROC/UART_RX/RX_MODULE.v
+source_file = 1, D:/FPGA_PROC/ALTART_MODULE_PROC/UART_RX/CTL_MODULE.v
+source_file = 1, D:/FPGA_PROC/ALTART_MODULE_PROC/UART_RX/top_module.v
+source_file = 1, D:/FPGA_PROC/ALTART_MODULE_PROC/UART_RX/db/UART_RX.cbx.xml
+design_name = top_module
+instance = comp, \NUM_Data[0]~output , NUM_Data[0]~output, top_module, 1
+instance = comp, \NUM_Data[1]~output , NUM_Data[1]~output, top_module, 1
+instance = comp, \NUM_Data[2]~output , NUM_Data[2]~output, top_module, 1
+instance = comp, \NUM_Data[3]~output , NUM_Data[3]~output, top_module, 1
+instance = comp, \CLK~input , CLK~input, top_module, 1
+instance = comp, \RSTn~input , RSTn~input, top_module, 1
+instance = comp, \RX_Pin_In~input , RX_Pin_In~input, top_module, 1

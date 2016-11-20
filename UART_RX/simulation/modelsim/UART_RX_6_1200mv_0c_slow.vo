@@ -1,0 +1,165 @@
+// Copyright (C) 1991-2012 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II 64-Bit"
+// VERSION "Version 12.1 Build 177 11/07/2012 SJ Full Version"
+
+// DATE "11/15/2016 21:26:42"
+
+// 
+// Device: Altera EP4CE40F23C6 Package FBGA484
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module top_module (
+	CLK,
+	RSTn,
+	RX_Pin_In,
+	NUM_Data);
+input 	CLK;
+input 	RSTn;
+input 	RX_Pin_In;
+output 	[3:0] NUM_Data;
+
+// Design Ports Information
+// CLK	=>  Location: PIN_T1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// RSTn	=>  Location: PIN_T2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// RX_Pin_In	=>  Location: PIN_A15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// NUM_Data[0]	=>  Location: PIN_C1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// NUM_Data[1]	=>  Location: PIN_C2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// NUM_Data[2]	=>  Location: PIN_B1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// NUM_Data[3]	=>  Location: PIN_B2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+// synopsys translate_off
+initial $sdf_annotate("UART_RX_6_1200mv_0c_v_slow.sdo");
+// synopsys translate_on
+
+wire \CLK~input_o ;
+wire \RSTn~input_o ;
+wire \RX_Pin_In~input_o ;
+wire \NUM_Data[0]~output_o ;
+wire \NUM_Data[1]~output_o ;
+wire \NUM_Data[2]~output_o ;
+wire \NUM_Data[3]~output_o ;
+
+
+// Location: IOOBUF_X0_Y38_N23
+cycloneive_io_obuf \NUM_Data[0]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\NUM_Data[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \NUM_Data[0]~output .bus_hold = "false";
+defparam \NUM_Data[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y38_N16
+cycloneive_io_obuf \NUM_Data[1]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\NUM_Data[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \NUM_Data[1]~output .bus_hold = "false";
+defparam \NUM_Data[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y40_N2
+cycloneive_io_obuf \NUM_Data[2]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\NUM_Data[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \NUM_Data[2]~output .bus_hold = "false";
+defparam \NUM_Data[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y41_N23
+cycloneive_io_obuf \NUM_Data[3]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\NUM_Data[3]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \NUM_Data[3]~output .bus_hold = "false";
+defparam \NUM_Data[3]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y21_N22
+cycloneive_io_ibuf \CLK~input (
+	.i(CLK),
+	.ibar(gnd),
+	.o(\CLK~input_o ));
+// synopsys translate_off
+defparam \CLK~input .bus_hold = "false";
+defparam \CLK~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y21_N15
+cycloneive_io_ibuf \RSTn~input (
+	.i(RSTn),
+	.ibar(gnd),
+	.o(\RSTn~input_o ));
+// synopsys translate_off
+defparam \RSTn~input .bus_hold = "false";
+defparam \RSTn~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X45_Y43_N8
+cycloneive_io_ibuf \RX_Pin_In~input (
+	.i(RX_Pin_In),
+	.ibar(gnd),
+	.o(\RX_Pin_In~input_o ));
+// synopsys translate_off
+defparam \RX_Pin_In~input .bus_hold = "false";
+defparam \RX_Pin_In~input .simulate_z_as = "z";
+// synopsys translate_on
+
+assign NUM_Data[0] = \NUM_Data[0]~output_o ;
+
+assign NUM_Data[1] = \NUM_Data[1]~output_o ;
+
+assign NUM_Data[2] = \NUM_Data[2]~output_o ;
+
+assign NUM_Data[3] = \NUM_Data[3]~output_o ;
+
+endmodule

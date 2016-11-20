@@ -1,0 +1,129 @@
+|top_module
+CLK => CLK.IN2
+RSTn => RSTn.IN2
+PS2_CLK_Pin_In => PS2_CLK_Pin_In.IN1
+PS2_Data_Pin_In => PS2_Data_Pin_In.IN1
+Data_Out[0] <= CMD_CTL_MODULE:U6.Data_Out
+Data_Out[1] <= CMD_CTL_MODULE:U6.Data_Out
+Data_Out[2] <= CMD_CTL_MODULE:U6.Data_Out
+Data_Out[3] <= CMD_CTL_MODULE:U6.Data_Out
+
+
+|top_module|PS2_MODULE:U5
+CLK => CLK.IN2
+RSTn => RSTn.IN2
+PS2_CLK_Pin_In => PS2_CLK_Pin_In.IN1
+PS2_Data_Pin_In => PS2_Data_Pin_In.IN1
+PS2_Data[0] <= PS2_DECODE_MODULE:U2.PS2_Data
+PS2_Data[1] <= PS2_DECODE_MODULE:U2.PS2_Data
+PS2_Data[2] <= PS2_DECODE_MODULE:U2.PS2_Data
+PS2_Data[3] <= PS2_DECODE_MODULE:U2.PS2_Data
+PS2_Data[4] <= PS2_DECODE_MODULE:U2.PS2_Data
+PS2_Data[5] <= PS2_DECODE_MODULE:U2.PS2_Data
+PS2_Data[6] <= PS2_DECODE_MODULE:U2.PS2_Data
+PS2_Data[7] <= PS2_DECODE_MODULE:U2.PS2_Data
+PS2_Done_Sig <= PS2_DECODE_MODULE:U2.PS2_Done_Sig
+
+
+|top_module|PS2_MODULE:U5|H2L_DETECT_MODULE:U1
+CLK => rH2L_F2.CLK
+CLK => rH2L_F1.CLK
+RSTn => rH2L_F2.ACLR
+RSTn => rH2L_F1.ACLR
+PS2_CLK_Pin_In => rH2L_F1.DATAIN
+H2L_Sig <= H2L_Sig.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_module|PS2_MODULE:U5|PS2_DECODE_MODULE:U2
+CLK => isDone.CLK
+CLK => rIndex[0].CLK
+CLK => rIndex[1].CLK
+CLK => rIndex[2].CLK
+CLK => rIndex[3].CLK
+CLK => rIndex[4].CLK
+CLK => rData[0].CLK
+CLK => rData[1].CLK
+CLK => rData[2].CLK
+CLK => rData[3].CLK
+CLK => rData[4].CLK
+CLK => rData[5].CLK
+CLK => rData[6].CLK
+CLK => rData[7].CLK
+RSTn => isDone.ACLR
+RSTn => rIndex[0].ACLR
+RSTn => rIndex[1].ACLR
+RSTn => rIndex[2].ACLR
+RSTn => rIndex[3].ACLR
+RSTn => rIndex[4].ACLR
+RSTn => rData[0].ACLR
+RSTn => rData[1].ACLR
+RSTn => rData[2].ACLR
+RSTn => rData[3].ACLR
+RSTn => rData[4].ACLR
+RSTn => rData[5].ACLR
+RSTn => rData[6].ACLR
+RSTn => rData[7].ACLR
+H2L_Sig => rIndex.OUTPUTSELECT
+H2L_Sig => rIndex.OUTPUTSELECT
+H2L_Sig => rIndex.OUTPUTSELECT
+H2L_Sig => rIndex.OUTPUTSELECT
+H2L_Sig => rIndex.OUTPUTSELECT
+H2L_Sig => rData.OUTPUTSELECT
+H2L_Sig => rData.OUTPUTSELECT
+H2L_Sig => rData.OUTPUTSELECT
+H2L_Sig => rData.OUTPUTSELECT
+H2L_Sig => rData.OUTPUTSELECT
+H2L_Sig => rData.OUTPUTSELECT
+H2L_Sig => rData.OUTPUTSELECT
+H2L_Sig => rData.OUTPUTSELECT
+H2L_Sig => rIndex.OUTPUTSELECT
+H2L_Sig => rIndex.OUTPUTSELECT
+H2L_Sig => rIndex.OUTPUTSELECT
+H2L_Sig => rIndex.OUTPUTSELECT
+H2L_Sig => rIndex.OUTPUTSELECT
+PS2_Data_Pin_In => rData.DATAB
+PS2_Data_Pin_In => rData.DATAB
+PS2_Data_Pin_In => rData.DATAB
+PS2_Data_Pin_In => rData.DATAB
+PS2_Data_Pin_In => rData.DATAB
+PS2_Data_Pin_In => rData.DATAB
+PS2_Data_Pin_In => rData.DATAB
+PS2_Data_Pin_In => rData.DATAB
+PS2_Data[0] <= rData[0].DB_MAX_OUTPUT_PORT_TYPE
+PS2_Data[1] <= rData[1].DB_MAX_OUTPUT_PORT_TYPE
+PS2_Data[2] <= rData[2].DB_MAX_OUTPUT_PORT_TYPE
+PS2_Data[3] <= rData[3].DB_MAX_OUTPUT_PORT_TYPE
+PS2_Data[4] <= rData[4].DB_MAX_OUTPUT_PORT_TYPE
+PS2_Data[5] <= rData[5].DB_MAX_OUTPUT_PORT_TYPE
+PS2_Data[6] <= rData[6].DB_MAX_OUTPUT_PORT_TYPE
+PS2_Data[7] <= rData[7].DB_MAX_OUTPUT_PORT_TYPE
+PS2_Done_Sig <= isDone.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_module|CMD_CTL_MODULE:U6
+CLK => rData[0].CLK
+CLK => rData[1].CLK
+CLK => rData[2].CLK
+CLK => rData[3].CLK
+RSTn => rData[0].PRESET
+RSTn => rData[1].ACLR
+RSTn => rData[2].ACLR
+RSTn => rData[3].ACLR
+PS2_Done_Sig => rData[0].ENA
+PS2_Done_Sig => rData[3].ENA
+PS2_Done_Sig => rData[2].ENA
+PS2_Done_Sig => rData[1].ENA
+PS2_Data[0] => Decoder0.IN7
+PS2_Data[1] => Decoder0.IN6
+PS2_Data[2] => Decoder0.IN5
+PS2_Data[3] => Decoder0.IN4
+PS2_Data[4] => Decoder0.IN3
+PS2_Data[5] => Decoder0.IN2
+PS2_Data[6] => Decoder0.IN1
+PS2_Data[7] => Decoder0.IN0
+Data_Out[0] <= rData[0].DB_MAX_OUTPUT_PORT_TYPE
+Data_Out[1] <= rData[1].DB_MAX_OUTPUT_PORT_TYPE
+Data_Out[2] <= rData[2].DB_MAX_OUTPUT_PORT_TYPE
+Data_Out[3] <= rData[3].DB_MAX_OUTPUT_PORT_TYPE
+
+

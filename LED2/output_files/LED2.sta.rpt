@@ -1,0 +1,1564 @@
+TimeQuest Timing Analyzer report for LED2
+Sun Nov 13 20:18:25 2016
+Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Slow 1200mV 85C Model Setup Summary
+  7. Slow 1200mV 85C Model Hold Summary
+  8. Slow 1200mV 85C Model Recovery Summary
+  9. Slow 1200mV 85C Model Removal Summary
+ 10. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 11. Slow 1200mV 85C Model Setup: 'CLK'
+ 12. Slow 1200mV 85C Model Hold: 'CLK'
+ 13. Slow 1200mV 85C Model Minimum Pulse Width: 'CLK'
+ 14. Clock to Output Times
+ 15. Minimum Clock to Output Times
+ 16. Slow 1200mV 85C Model Metastability Report
+ 17. Slow 1200mV 0C Model Fmax Summary
+ 18. Slow 1200mV 0C Model Setup Summary
+ 19. Slow 1200mV 0C Model Hold Summary
+ 20. Slow 1200mV 0C Model Recovery Summary
+ 21. Slow 1200mV 0C Model Removal Summary
+ 22. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 23. Slow 1200mV 0C Model Setup: 'CLK'
+ 24. Slow 1200mV 0C Model Hold: 'CLK'
+ 25. Slow 1200mV 0C Model Minimum Pulse Width: 'CLK'
+ 26. Clock to Output Times
+ 27. Minimum Clock to Output Times
+ 28. Slow 1200mV 0C Model Metastability Report
+ 29. Fast 1200mV 0C Model Setup Summary
+ 30. Fast 1200mV 0C Model Hold Summary
+ 31. Fast 1200mV 0C Model Recovery Summary
+ 32. Fast 1200mV 0C Model Removal Summary
+ 33. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 34. Fast 1200mV 0C Model Setup: 'CLK'
+ 35. Fast 1200mV 0C Model Hold: 'CLK'
+ 36. Fast 1200mV 0C Model Minimum Pulse Width: 'CLK'
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Fast 1200mV 0C Model Metastability Report
+ 40. Multicorner Timing Analysis Summary
+ 41. Clock to Output Times
+ 42. Minimum Clock to Output Times
+ 43. Board Trace Model Assignments
+ 44. Input Transition Times
+ 45. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 46. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 47. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 48. Setup Transfers
+ 49. Hold Transfers
+ 50. Report TCCS
+ 51. Report RSKM
+ 52. Unconstrained Paths
+ 53. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                      ;
++--------------------+---------------------------------------------------+
+; Quartus II Version ; Version 12.1 Build 177 11/07/2012 SJ Full Version ;
+; Revision Name      ; LED2                                              ;
+; Device Family      ; Cyclone IV E                                      ;
+; Device Name        ; EP4CE40F23C6                                      ;
+; Timing Models      ; Final                                             ;
+; Delay Model        ; Combined                                          ;
+; Rise/Fall Delays   ; Enabled                                           ;
++--------------------+---------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ; < 0.1%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; CLK        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                        ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 328.52 MHz ; 250.0 MHz       ; CLK        ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------------+
+; Slow 1200mV 85C Model Setup Summary ;
++-------+--------+--------------------+
+; Clock ; Slack  ; End Point TNS      ;
++-------+--------+--------------------+
+; CLK   ; -2.044 ; -68.952            ;
++-------+--------+--------------------+
+
+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++-------+-------+--------------------+
+; Clock ; Slack ; End Point TNS      ;
++-------+-------+--------------------+
+; CLK   ; 0.341 ; 0.000              ;
++-------+-------+--------------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++-------+--------+----------------------------------+
+; Clock ; Slack  ; End Point TNS                    ;
++-------+--------+----------------------------------+
+; CLK   ; -3.000 ; -53.000                          ;
++-------+--------+----------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'CLK'                                                                                                                         ;
++--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                            ; To Node                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.044 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.975      ;
+; -2.044 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.975      ;
+; -2.043 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.974      ;
+; -2.042 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.973      ;
+; -2.013 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.063     ; 2.945      ;
+; -1.989 ; flash_module:U_FLASH_Inst|Count1[5]  ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.920      ;
+; -1.988 ; flash_module:U_FLASH_Inst|Count1[5]  ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.919      ;
+; -1.988 ; flash_module:U_FLASH_Inst|Count1[5]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.919      ;
+; -1.987 ; flash_module:U_FLASH_Inst|Count1[5]  ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.918      ;
+; -1.979 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 1.000        ; -0.063     ; 2.911      ;
+; -1.945 ; flash_module:U_FLASH_Inst|Count1[5]  ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.063     ; 2.877      ;
+; -1.934 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.864      ;
+; -1.933 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.863      ;
+; -1.933 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.863      ;
+; -1.932 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.862      ;
+; -1.920 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.851      ;
+; -1.919 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.850      ;
+; -1.919 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.850      ;
+; -1.918 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.849      ;
+; -1.907 ; flash_module:U_FLASH_Inst|Count1[21] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.429     ; 2.473      ;
+; -1.907 ; flash_module:U_FLASH_Inst|Count1[21] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.429     ; 2.473      ;
+; -1.906 ; flash_module:U_FLASH_Inst|Count1[21] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.429     ; 2.472      ;
+; -1.905 ; flash_module:U_FLASH_Inst|Count1[21] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.429     ; 2.471      ;
+; -1.902 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 1.000        ; -0.063     ; 2.834      ;
+; -1.896 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.827      ;
+; -1.876 ; flash_module:U_FLASH_Inst|Count1[21] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.428     ; 2.443      ;
+; -1.876 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.063     ; 2.808      ;
+; -1.850 ; flash_module:U_FLASH_Inst|Count1[5]  ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 1.000        ; -0.063     ; 2.782      ;
+; -1.847 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.777      ;
+; -1.847 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.777      ;
+; -1.846 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.776      ;
+; -1.846 ; flash_module:U_FLASH_Inst|Count1[3]  ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 1.000        ; -0.063     ; 2.778      ;
+; -1.845 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.775      ;
+; -1.825 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.755      ;
+; -1.825 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.755      ;
+; -1.824 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.754      ;
+; -1.823 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.753      ;
+; -1.820 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.750      ;
+; -1.819 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.749      ;
+; -1.819 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.749      ;
+; -1.818 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.748      ;
+; -1.816 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.747      ;
+; -1.806 ; flash_module:U_FLASH_Inst|Count1[7]  ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.737      ;
+; -1.806 ; flash_module:U_FLASH_Inst|Count1[7]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.737      ;
+; -1.805 ; flash_module:U_FLASH_Inst|Count1[7]  ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.736      ;
+; -1.804 ; flash_module:U_FLASH_Inst|Count1[7]  ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.735      ;
+; -1.804 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.735      ;
+; -1.804 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.735      ;
+; -1.803 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.734      ;
+; -1.802 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.733      ;
+; -1.794 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.725      ;
+; -1.776 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.707      ;
+; -1.775 ; flash_module:U_FLASH_Inst|Count1[7]  ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.063     ; 2.707      ;
+; -1.773 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.063     ; 2.705      ;
+; -1.768 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[13] ; CLK          ; CLK         ; 1.000        ; -0.063     ; 2.700      ;
+; -1.767 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 1.000        ; -0.063     ; 2.699      ;
+; -1.763 ; flash_module:U_FLASH_Inst|Count1[2]  ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 1.000        ; -0.063     ; 2.695      ;
+; -1.761 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.691      ;
+; -1.761 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.691      ;
+; -1.760 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.690      ;
+; -1.759 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.689      ;
+; -1.757 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.687      ;
+; -1.757 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.687      ;
+; -1.756 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.686      ;
+; -1.755 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.685      ;
+; -1.744 ; flash_module:U_FLASH_Inst|Count1[20] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.674      ;
+; -1.743 ; flash_module:U_FLASH_Inst|Count1[20] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.673      ;
+; -1.743 ; flash_module:U_FLASH_Inst|Count1[20] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.673      ;
+; -1.742 ; flash_module:U_FLASH_Inst|Count1[20] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.672      ;
+; -1.739 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.670      ;
+; -1.739 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.670      ;
+; -1.738 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.669      ;
+; -1.737 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.668      ;
+; -1.730 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.661      ;
+; -1.726 ; flash_module:U_FLASH_Inst|Count1[10] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.657      ;
+; -1.726 ; flash_module:U_FLASH_Inst|Count1[10] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.657      ;
+; -1.726 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.657      ;
+; -1.725 ; flash_module:U_FLASH_Inst|Count1[10] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.656      ;
+; -1.724 ; flash_module:U_FLASH_Inst|Count1[10] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.655      ;
+; -1.719 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.063     ; 2.651      ;
+; -1.705 ; flash_module:U_FLASH_Inst|Count1[5]  ; flash_module:U_FLASH_Inst|Count1[13] ; CLK          ; CLK         ; 1.000        ; -0.063     ; 2.637      ;
+; -1.700 ; flash_module:U_FLASH_Inst|Count1[20] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.631      ;
+; -1.696 ; flash_module:U_FLASH_Inst|Count1[6]  ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.627      ;
+; -1.695 ; flash_module:U_FLASH_Inst|Count1[10] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.063     ; 2.627      ;
+; -1.695 ; flash_module:U_FLASH_Inst|Count1[6]  ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.626      ;
+; -1.695 ; flash_module:U_FLASH_Inst|Count1[6]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.626      ;
+; -1.694 ; flash_module:U_FLASH_Inst|Count1[6]  ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.625      ;
+; -1.672 ; flash_module:U_FLASH_Inst|Count1[0]  ; run_module:U_RUN_Inst|Count1[6]      ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.603      ;
+; -1.670 ; flash_module:U_FLASH_Inst|Count1[0]  ; run_module:U_RUN_Inst|Count1[14]     ; CLK          ; CLK         ; 1.000        ; 0.286      ; 2.951      ;
+; -1.661 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[21] ; CLK          ; CLK         ; 1.000        ; 0.286      ; 2.942      ;
+; -1.659 ; flash_module:U_FLASH_Inst|Count1[0]  ; run_module:U_RUN_Inst|Count_MS[2]    ; CLK          ; CLK         ; 1.000        ; 0.283      ; 2.937      ;
+; -1.652 ; flash_module:U_FLASH_Inst|Count1[6]  ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.063     ; 2.584      ;
+; -1.651 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[13] ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.582      ;
+; -1.650 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 1.000        ; -0.064     ; 2.581      ;
+; -1.648 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[20] ; CLK          ; CLK         ; 1.000        ; -0.063     ; 2.580      ;
+; -1.637 ; flash_module:U_FLASH_Inst|Count1[4]  ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 1.000        ; -0.063     ; 2.569      ;
+; -1.636 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[13] ; CLK          ; CLK         ; 1.000        ; -0.063     ; 2.568      ;
+; -1.636 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 1.000        ; -0.063     ; 2.568      ;
+; -1.631 ; flash_module:U_FLASH_Inst|Count1[21] ; flash_module:U_FLASH_Inst|Count1[13] ; CLK          ; CLK         ; 1.000        ; -0.428     ; 2.198      ;
+; -1.630 ; flash_module:U_FLASH_Inst|Count1[15] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.065     ; 2.560      ;
++--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'CLK'                                                                                                                         ;
++-------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                            ; To Node                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.341 ; run_module:U_RUN_Inst|Count_MS[1]    ; run_module:U_RUN_Inst|Count_MS[1]    ; CLK          ; CLK         ; 0.000        ; 0.079      ; 0.577      ;
+; 0.341 ; run_module:U_RUN_Inst|Count_MS[2]    ; run_module:U_RUN_Inst|Count_MS[2]    ; CLK          ; CLK         ; 0.000        ; 0.079      ; 0.577      ;
+; 0.341 ; run_module:U_RUN_Inst|Count_MS[6]    ; run_module:U_RUN_Inst|Count_MS[6]    ; CLK          ; CLK         ; 0.000        ; 0.079      ; 0.577      ;
+; 0.341 ; run_module:U_RUN_Inst|Count_MS[7]    ; run_module:U_RUN_Inst|Count_MS[7]    ; CLK          ; CLK         ; 0.000        ; 0.079      ; 0.577      ;
+; 0.341 ; run_module:U_RUN_Inst|Count_MS[8]    ; run_module:U_RUN_Inst|Count_MS[8]    ; CLK          ; CLK         ; 0.000        ; 0.079      ; 0.577      ;
+; 0.341 ; run_module:U_RUN_Inst|Count_MS[9]    ; run_module:U_RUN_Inst|Count_MS[9]    ; CLK          ; CLK         ; 0.000        ; 0.079      ; 0.577      ;
+; 0.342 ; run_module:U_RUN_Inst|Count_MS[3]    ; run_module:U_RUN_Inst|Count_MS[3]    ; CLK          ; CLK         ; 0.000        ; 0.078      ; 0.577      ;
+; 0.342 ; run_module:U_RUN_Inst|Count_MS[4]    ; run_module:U_RUN_Inst|Count_MS[4]    ; CLK          ; CLK         ; 0.000        ; 0.078      ; 0.577      ;
+; 0.342 ; run_module:U_RUN_Inst|Count_MS[5]    ; run_module:U_RUN_Inst|Count_MS[5]    ; CLK          ; CLK         ; 0.000        ; 0.078      ; 0.577      ;
+; 0.342 ; run_module:U_RUN_Inst|Count_MS[0]    ; run_module:U_RUN_Inst|Count_MS[0]    ; CLK          ; CLK         ; 0.000        ; 0.078      ; 0.577      ;
+; 0.342 ; flash_module:U_FLASH_Inst|rLED_Out   ; flash_module:U_FLASH_Inst|rLED_Out   ; CLK          ; CLK         ; 0.000        ; 0.078      ; 0.577      ;
+; 0.344 ; run_module:U_RUN_Inst|rLED_Out[0]    ; run_module:U_RUN_Inst|rLED_Out[0]    ; CLK          ; CLK         ; 0.000        ; 0.079      ; 0.580      ;
+; 0.373 ; run_module:U_RUN_Inst|rLED_Out[0]    ; run_module:U_RUN_Inst|rLED_Out[1]    ; CLK          ; CLK         ; 0.000        ; 0.079      ; 0.609      ;
+; 0.378 ; run_module:U_RUN_Inst|rLED_Out[2]    ; run_module:U_RUN_Inst|rLED_Out[0]    ; CLK          ; CLK         ; 0.000        ; 0.079      ; 0.614      ;
+; 0.529 ; run_module:U_RUN_Inst|rLED_Out[1]    ; run_module:U_RUN_Inst|rLED_Out[2]    ; CLK          ; CLK         ; 0.000        ; 0.079      ; 0.765      ;
+; 0.555 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[14] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 0.776      ;
+; 0.556 ; flash_module:U_FLASH_Inst|Count1[6]  ; flash_module:U_FLASH_Inst|Count1[6]  ; CLK          ; CLK         ; 0.000        ; 0.064      ; 0.777      ;
+; 0.557 ; flash_module:U_FLASH_Inst|Count1[12] ; flash_module:U_FLASH_Inst|Count1[12] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 0.778      ;
+; 0.557 ; flash_module:U_FLASH_Inst|Count1[15] ; flash_module:U_FLASH_Inst|Count1[15] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 0.778      ;
+; 0.559 ; flash_module:U_FLASH_Inst|Count1[4]  ; flash_module:U_FLASH_Inst|Count1[4]  ; CLK          ; CLK         ; 0.000        ; 0.064      ; 0.780      ;
+; 0.567 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[11] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 0.788      ;
+; 0.567 ; run_module:U_RUN_Inst|Count1[2]      ; run_module:U_RUN_Inst|Count1[2]      ; CLK          ; CLK         ; 0.000        ; 0.064      ; 0.788      ;
+; 0.567 ; run_module:U_RUN_Inst|Count1[12]     ; run_module:U_RUN_Inst|Count1[12]     ; CLK          ; CLK         ; 0.000        ; 0.064      ; 0.788      ;
+; 0.568 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[9]  ; CLK          ; CLK         ; 0.000        ; 0.064      ; 0.789      ;
+; 0.568 ; run_module:U_RUN_Inst|Count1[7]      ; run_module:U_RUN_Inst|Count1[7]      ; CLK          ; CLK         ; 0.000        ; 0.064      ; 0.789      ;
+; 0.569 ; flash_module:U_FLASH_Inst|Count1[3]  ; flash_module:U_FLASH_Inst|Count1[3]  ; CLK          ; CLK         ; 0.000        ; 0.064      ; 0.790      ;
+; 0.569 ; flash_module:U_FLASH_Inst|Count1[16] ; flash_module:U_FLASH_Inst|Count1[16] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 0.790      ;
+; 0.570 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[19] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 0.791      ;
+; 0.570 ; run_module:U_RUN_Inst|Count1[3]      ; run_module:U_RUN_Inst|Count1[3]      ; CLK          ; CLK         ; 0.000        ; 0.064      ; 0.791      ;
+; 0.570 ; run_module:U_RUN_Inst|Count1[10]     ; run_module:U_RUN_Inst|Count1[10]     ; CLK          ; CLK         ; 0.000        ; 0.064      ; 0.791      ;
+; 0.571 ; flash_module:U_FLASH_Inst|Count1[2]  ; flash_module:U_FLASH_Inst|Count1[2]  ; CLK          ; CLK         ; 0.000        ; 0.064      ; 0.792      ;
+; 0.571 ; run_module:U_RUN_Inst|Count1[5]      ; run_module:U_RUN_Inst|Count1[5]      ; CLK          ; CLK         ; 0.000        ; 0.064      ; 0.792      ;
+; 0.571 ; run_module:U_RUN_Inst|Count1[13]     ; run_module:U_RUN_Inst|Count1[13]     ; CLK          ; CLK         ; 0.000        ; 0.064      ; 0.792      ;
+; 0.572 ; flash_module:U_FLASH_Inst|Count1[20] ; flash_module:U_FLASH_Inst|Count1[20] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 0.793      ;
+; 0.572 ; run_module:U_RUN_Inst|Count1[11]     ; run_module:U_RUN_Inst|Count1[11]     ; CLK          ; CLK         ; 0.000        ; 0.064      ; 0.793      ;
+; 0.586 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[1]  ; CLK          ; CLK         ; 0.000        ; 0.064      ; 0.807      ;
+; 0.601 ; run_module:U_RUN_Inst|rLED_Out[1]    ; run_module:U_RUN_Inst|rLED_Out[0]    ; CLK          ; CLK         ; 0.000        ; 0.079      ; 0.837      ;
+; 0.605 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[0]  ; CLK          ; CLK         ; 0.000        ; 0.064      ; 0.826      ;
+; 0.787 ; flash_module:U_FLASH_Inst|Count1[20] ; flash_module:U_FLASH_Inst|Count1[21] ; CLK          ; CLK         ; 0.000        ; 0.428      ; 1.372      ;
+; 0.787 ; run_module:U_RUN_Inst|Count1[15]     ; run_module:U_RUN_Inst|Count1[15]     ; CLK          ; CLK         ; 0.000        ; 0.079      ; 1.023      ;
+; 0.787 ; run_module:U_RUN_Inst|Count1[13]     ; run_module:U_RUN_Inst|Count1[15]     ; CLK          ; CLK         ; 0.000        ; 0.428      ; 1.372      ;
+; 0.831 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[14] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.052      ;
+; 0.831 ; flash_module:U_FLASH_Inst|Count1[15] ; flash_module:U_FLASH_Inst|Count1[16] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.052      ;
+; 0.841 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[12] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.062      ;
+; 0.841 ; run_module:U_RUN_Inst|Count1[2]      ; run_module:U_RUN_Inst|Count1[3]      ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.062      ;
+; 0.842 ; run_module:U_RUN_Inst|Count1[12]     ; run_module:U_RUN_Inst|Count1[13]     ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.063      ;
+; 0.843 ; flash_module:U_FLASH_Inst|Count1[3]  ; flash_module:U_FLASH_Inst|Count1[4]  ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.064      ;
+; 0.843 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[15] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.064      ;
+; 0.844 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[20] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.065      ;
+; 0.844 ; run_module:U_RUN_Inst|Count1[10]     ; run_module:U_RUN_Inst|Count1[11]     ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.065      ;
+; 0.845 ; flash_module:U_FLASH_Inst|Count1[21] ; flash_module:U_FLASH_Inst|Count1[21] ; CLK          ; CLK         ; 0.000        ; 0.079      ; 1.081      ;
+; 0.845 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[16] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.066      ;
+; 0.846 ; flash_module:U_FLASH_Inst|Count1[12] ; flash_module:U_FLASH_Inst|Count1[14] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.067      ;
+; 0.848 ; flash_module:U_FLASH_Inst|Count1[4]  ; flash_module:U_FLASH_Inst|Count1[6]  ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.069      ;
+; 0.858 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[9]  ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.079      ;
+; 0.858 ; flash_module:U_FLASH_Inst|Count1[2]  ; flash_module:U_FLASH_Inst|Count1[3]  ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.079      ;
+; 0.859 ; run_module:U_RUN_Inst|Count1[3]      ; run_module:U_RUN_Inst|Count1[5]      ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.080      ;
+; 0.859 ; run_module:U_RUN_Inst|Count1[11]     ; run_module:U_RUN_Inst|Count1[12]     ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.080      ;
+; 0.859 ; flash_module:U_FLASH_Inst|Count1[10] ; flash_module:U_FLASH_Inst|Count1[11] ; CLK          ; CLK         ; 0.000        ; 0.065      ; 1.081      ;
+; 0.859 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[19] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.080      ;
+; 0.860 ; run_module:U_RUN_Inst|Count1[5]      ; run_module:U_RUN_Inst|Count1[7]      ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.081      ;
+; 0.860 ; flash_module:U_FLASH_Inst|Count1[2]  ; flash_module:U_FLASH_Inst|Count1[4]  ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.081      ;
+; 0.861 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[2]  ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.082      ;
+; 0.861 ; flash_module:U_FLASH_Inst|Count1[10] ; flash_module:U_FLASH_Inst|Count1[12] ; CLK          ; CLK         ; 0.000        ; 0.065      ; 1.083      ;
+; 0.861 ; run_module:U_RUN_Inst|Count1[11]     ; run_module:U_RUN_Inst|Count1[13]     ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.082      ;
+; 0.861 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[20] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.082      ;
+; 0.862 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.083      ;
+; 0.875 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[1]  ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.096      ;
+; 0.877 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[2]  ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.098      ;
+; 0.881 ; run_module:U_RUN_Inst|Count1[12]     ; run_module:U_RUN_Inst|Count1[15]     ; CLK          ; CLK         ; 0.000        ; 0.428      ; 1.466      ;
+; 0.882 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[21] ; CLK          ; CLK         ; 0.000        ; 0.428      ; 1.467      ;
+; 0.899 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[21] ; CLK          ; CLK         ; 0.000        ; 0.428      ; 1.484      ;
+; 0.900 ; run_module:U_RUN_Inst|Count1[11]     ; run_module:U_RUN_Inst|Count1[15]     ; CLK          ; CLK         ; 0.000        ; 0.428      ; 1.485      ;
+; 0.908 ; run_module:U_RUN_Inst|Count1[10]     ; run_module:U_RUN_Inst|Count1[9]      ; CLK          ; CLK         ; 0.000        ; 0.429      ; 1.494      ;
+; 0.910 ; run_module:U_RUN_Inst|Count1[10]     ; run_module:U_RUN_Inst|Count1[14]     ; CLK          ; CLK         ; 0.000        ; 0.429      ; 1.496      ;
+; 0.920 ; run_module:U_RUN_Inst|Count1[7]      ; run_module:U_RUN_Inst|Count1[9]      ; CLK          ; CLK         ; 0.000        ; 0.429      ; 1.506      ;
+; 0.941 ; run_module:U_RUN_Inst|Count1[10]     ; run_module:U_RUN_Inst|Count1[8]      ; CLK          ; CLK         ; 0.000        ; 0.429      ; 1.527      ;
+; 0.941 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[15] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.162      ;
+; 0.942 ; flash_module:U_FLASH_Inst|Count1[7]  ; flash_module:U_FLASH_Inst|Count1[9]  ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.163      ;
+; 0.943 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[16] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.164      ;
+; 0.945 ; run_module:U_RUN_Inst|Count1[13]     ; run_module:U_RUN_Inst|Count1[14]     ; CLK          ; CLK         ; 0.000        ; 0.429      ; 1.531      ;
+; 0.951 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[11] ; CLK          ; CLK         ; 0.000        ; 0.065      ; 1.173      ;
+; 0.953 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[14] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.174      ;
+; 0.953 ; run_module:U_RUN_Inst|Count1[2]      ; run_module:U_RUN_Inst|Count1[5]      ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.174      ;
+; 0.953 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[12] ; CLK          ; CLK         ; 0.000        ; 0.065      ; 1.175      ;
+; 0.954 ; run_module:U_RUN_Inst|Count1[10]     ; run_module:U_RUN_Inst|Count1[12]     ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.175      ;
+; 0.954 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[19] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.175      ;
+; 0.955 ; flash_module:U_FLASH_Inst|Count1[3]  ; flash_module:U_FLASH_Inst|Count1[6]  ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.176      ;
+; 0.956 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[13] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.177      ;
+; 0.956 ; run_module:U_RUN_Inst|Count1[10]     ; run_module:U_RUN_Inst|Count1[13]     ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.177      ;
+; 0.956 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[20] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.177      ;
+; 0.956 ; flash_module:U_FLASH_Inst|Count1[12] ; flash_module:U_FLASH_Inst|Count1[15] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.177      ;
+; 0.956 ; flash_module:U_FLASH_Inst|Count1[6]  ; flash_module:U_FLASH_Inst|Count1[9]  ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.177      ;
+; 0.958 ; flash_module:U_FLASH_Inst|Count1[12] ; flash_module:U_FLASH_Inst|Count1[16] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.179      ;
+; 0.968 ; run_module:U_RUN_Inst|Count1[7]      ; run_module:U_RUN_Inst|Count1[10]     ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.189      ;
+; 0.969 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.190      ;
+; 0.969 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[11] ; CLK          ; CLK         ; 0.000        ; 0.065      ; 1.191      ;
+; 0.969 ; flash_module:U_FLASH_Inst|Count1[16] ; flash_module:U_FLASH_Inst|Count1[19] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.190      ;
+; 0.970 ; run_module:U_RUN_Inst|Count1[7]      ; run_module:U_RUN_Inst|Count1[11]     ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.191      ;
+; 0.971 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 0.000        ; 0.064      ; 1.192      ;
++-------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width: 'CLK'                                                                     ;
++--------+--------------+----------------+-----------------+-------+------------+--------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type            ; Clock ; Clock Edge ; Target                               ;
++--------+--------------+----------------+-----------------+-------+------------+--------------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate       ; CLK   ; Rise       ; CLK                                  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[0]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[10] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[11] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[12] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[13] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[14] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[15] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[16] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[17] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[18] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[19] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[1]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[20] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[21] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[2]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[3]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[4]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[5]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[6]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[7]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[8]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[9]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|rLED_Out   ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[10]     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[11]     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[12]     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[13]     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[14]     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[15]     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[2]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[3]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[4]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[5]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[6]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[7]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[8]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[9]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[0]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[1]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[2]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[3]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[4]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[5]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[6]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[7]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[8]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[9]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|rLED_Out[0]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|rLED_Out[1]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|rLED_Out[2]    ;
+; 0.159  ; 0.343        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|rLED_Out[0]    ;
+; 0.159  ; 0.343        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|rLED_Out[1]    ;
+; 0.159  ; 0.343        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|rLED_Out[2]    ;
+; 0.161  ; 0.345        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|rLED_Out   ;
+; 0.161  ; 0.345        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[14]     ;
+; 0.161  ; 0.345        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[8]      ;
+; 0.161  ; 0.345        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[9]      ;
+; 0.169  ; 0.353        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[21] ;
+; 0.169  ; 0.353        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[1]    ;
+; 0.169  ; 0.353        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[2]    ;
+; 0.169  ; 0.353        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[6]    ;
+; 0.169  ; 0.353        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[7]    ;
+; 0.169  ; 0.353        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[8]    ;
+; 0.169  ; 0.353        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[9]    ;
+; 0.170  ; 0.354        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[15]     ;
+; 0.174  ; 0.358        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[0]    ;
+; 0.174  ; 0.358        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[3]    ;
+; 0.174  ; 0.358        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[4]    ;
+; 0.174  ; 0.358        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[5]    ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[0]  ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[10] ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[11] ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[12] ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[13] ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[14] ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[15] ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[16] ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[17] ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[18] ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[19] ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[1]  ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[20] ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[2]  ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[3]  ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[4]  ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[5]  ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[6]  ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[7]  ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[8]  ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[9]  ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[10]     ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[11]     ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[12]     ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[13]     ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[2]      ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[3]      ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[4]      ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[5]      ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[6]      ;
++--------+--------------+----------------+-----------------+-------+------------+--------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; Flash_LED   ; CLK        ; 7.833 ; 7.744 ; Rise       ; CLK             ;
+; Run_LED[*]  ; CLK        ; 8.016 ; 8.089 ; Rise       ; CLK             ;
+;  Run_LED[0] ; CLK        ; 7.593 ; 7.515 ; Rise       ; CLK             ;
+;  Run_LED[1] ; CLK        ; 7.535 ; 7.589 ; Rise       ; CLK             ;
+;  Run_LED[2] ; CLK        ; 8.016 ; 8.089 ; Rise       ; CLK             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; Flash_LED   ; CLK        ; 7.576 ; 7.492 ; Rise       ; CLK             ;
+; Run_LED[*]  ; CLK        ; 7.292 ; 7.272 ; Rise       ; CLK             ;
+;  Run_LED[0] ; CLK        ; 7.346 ; 7.272 ; Rise       ; CLK             ;
+;  Run_LED[1] ; CLK        ; 7.292 ; 7.342 ; Rise       ; CLK             ;
+;  Run_LED[2] ; CLK        ; 7.752 ; 7.822 ; Rise       ; CLK             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
+----------------------------------------------
+; Slow 1200mV 85C Model Metastability Report ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                         ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 367.38 MHz ; 250.0 MHz       ; CLK        ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; CLK   ; -1.722 ; -55.990           ;
++-------+--------+-------------------+
+
+
++-----------------------------------+
+; Slow 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; CLK   ; 0.296 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; CLK   ; -3.000 ; -53.000                         ;
++-------+--------+---------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'CLK'                                                                                                                          ;
++--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                            ; To Node                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.722 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.660      ;
+; -1.718 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.656      ;
+; -1.718 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.656      ;
+; -1.717 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.655      ;
+; -1.705 ; flash_module:U_FLASH_Inst|Count1[5]  ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.643      ;
+; -1.704 ; flash_module:U_FLASH_Inst|Count1[5]  ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.642      ;
+; -1.704 ; flash_module:U_FLASH_Inst|Count1[5]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.642      ;
+; -1.703 ; flash_module:U_FLASH_Inst|Count1[5]  ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.641      ;
+; -1.690 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.056     ; 2.629      ;
+; -1.656 ; flash_module:U_FLASH_Inst|Count1[5]  ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.056     ; 2.595      ;
+; -1.637 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.574      ;
+; -1.636 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.573      ;
+; -1.636 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.573      ;
+; -1.635 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.572      ;
+; -1.631 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.569      ;
+; -1.628 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.566      ;
+; -1.628 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.566      ;
+; -1.627 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.565      ;
+; -1.617 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 1.000        ; -0.056     ; 2.556      ;
+; -1.603 ; flash_module:U_FLASH_Inst|Count1[21] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.394     ; 2.204      ;
+; -1.602 ; flash_module:U_FLASH_Inst|Count1[21] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.394     ; 2.203      ;
+; -1.602 ; flash_module:U_FLASH_Inst|Count1[21] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.394     ; 2.203      ;
+; -1.601 ; flash_module:U_FLASH_Inst|Count1[21] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.394     ; 2.202      ;
+; -1.600 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.538      ;
+; -1.599 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.056     ; 2.538      ;
+; -1.569 ; flash_module:U_FLASH_Inst|Count1[21] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.393     ; 2.171      ;
+; -1.561 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.498      ;
+; -1.560 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.497      ;
+; -1.560 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.497      ;
+; -1.559 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.496      ;
+; -1.556 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 1.000        ; -0.056     ; 2.495      ;
+; -1.554 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.491      ;
+; -1.550 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.487      ;
+; -1.550 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.487      ;
+; -1.549 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.486      ;
+; -1.534 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.471      ;
+; -1.530 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.467      ;
+; -1.530 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.467      ;
+; -1.529 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.466      ;
+; -1.522 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.460      ;
+; -1.522 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.460      ;
+; -1.521 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.459      ;
+; -1.521 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.459      ;
+; -1.520 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.458      ;
+; -1.512 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.450      ;
+; -1.504 ; flash_module:U_FLASH_Inst|Count1[7]  ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.442      ;
+; -1.504 ; flash_module:U_FLASH_Inst|Count1[5]  ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 1.000        ; -0.056     ; 2.443      ;
+; -1.503 ; flash_module:U_FLASH_Inst|Count1[3]  ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 1.000        ; -0.056     ; 2.442      ;
+; -1.502 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.440      ;
+; -1.500 ; flash_module:U_FLASH_Inst|Count1[7]  ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.438      ;
+; -1.500 ; flash_module:U_FLASH_Inst|Count1[7]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.438      ;
+; -1.499 ; flash_module:U_FLASH_Inst|Count1[7]  ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.437      ;
+; -1.477 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[13] ; CLK          ; CLK         ; 1.000        ; -0.056     ; 2.416      ;
+; -1.476 ; flash_module:U_FLASH_Inst|Count1[20] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.413      ;
+; -1.475 ; flash_module:U_FLASH_Inst|Count1[20] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.412      ;
+; -1.475 ; flash_module:U_FLASH_Inst|Count1[20] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.412      ;
+; -1.475 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 1.000        ; -0.056     ; 2.414      ;
+; -1.474 ; flash_module:U_FLASH_Inst|Count1[20] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.411      ;
+; -1.473 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.056     ; 2.412      ;
+; -1.472 ; flash_module:U_FLASH_Inst|Count1[7]  ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.056     ; 2.411      ;
+; -1.462 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.399      ;
+; -1.458 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.395      ;
+; -1.458 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.395      ;
+; -1.457 ; flash_module:U_FLASH_Inst|Count1[6]  ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.395      ;
+; -1.457 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.394      ;
+; -1.456 ; flash_module:U_FLASH_Inst|Count1[6]  ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.394      ;
+; -1.456 ; flash_module:U_FLASH_Inst|Count1[6]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.394      ;
+; -1.455 ; flash_module:U_FLASH_Inst|Count1[6]  ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.393      ;
+; -1.455 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.392      ;
+; -1.451 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.388      ;
+; -1.451 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.388      ;
+; -1.450 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.387      ;
+; -1.447 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.385      ;
+; -1.443 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.381      ;
+; -1.443 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.381      ;
+; -1.442 ; flash_module:U_FLASH_Inst|Count1[5]  ; flash_module:U_FLASH_Inst|Count1[13] ; CLK          ; CLK         ; 1.000        ; -0.056     ; 2.381      ;
+; -1.442 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.380      ;
+; -1.436 ; flash_module:U_FLASH_Inst|Count1[10] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.374      ;
+; -1.433 ; flash_module:U_FLASH_Inst|Count1[2]  ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 1.000        ; -0.056     ; 2.372      ;
+; -1.432 ; flash_module:U_FLASH_Inst|Count1[10] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.370      ;
+; -1.432 ; flash_module:U_FLASH_Inst|Count1[10] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.370      ;
+; -1.431 ; flash_module:U_FLASH_Inst|Count1[10] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.369      ;
+; -1.430 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.368      ;
+; -1.427 ; flash_module:U_FLASH_Inst|Count1[20] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.365      ;
+; -1.423 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.361      ;
+; -1.415 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.056     ; 2.354      ;
+; -1.408 ; flash_module:U_FLASH_Inst|Count1[6]  ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.056     ; 2.347      ;
+; -1.404 ; flash_module:U_FLASH_Inst|Count1[0]  ; run_module:U_RUN_Inst|Count1[6]      ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.341      ;
+; -1.404 ; flash_module:U_FLASH_Inst|Count1[10] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.056     ; 2.343      ;
+; -1.402 ; flash_module:U_FLASH_Inst|Count1[0]  ; run_module:U_RUN_Inst|Count1[14]     ; CLK          ; CLK         ; 1.000        ; 0.267      ; 2.664      ;
+; -1.398 ; flash_module:U_FLASH_Inst|Count1[15] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.335      ;
+; -1.397 ; flash_module:U_FLASH_Inst|Count1[15] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.334      ;
+; -1.397 ; flash_module:U_FLASH_Inst|Count1[15] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.334      ;
+; -1.396 ; flash_module:U_FLASH_Inst|Count1[15] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.058     ; 2.333      ;
+; -1.387 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[13] ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.325      ;
+; -1.386 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[13] ; CLK          ; CLK         ; 1.000        ; -0.056     ; 2.325      ;
+; -1.385 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 1.000        ; -0.057     ; 2.323      ;
+; -1.384 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 1.000        ; -0.056     ; 2.323      ;
+; -1.379 ; flash_module:U_FLASH_Inst|Count1[0]  ; run_module:U_RUN_Inst|Count_MS[2]    ; CLK          ; CLK         ; 1.000        ; 0.264      ; 2.638      ;
+; -1.374 ; run_module:U_RUN_Inst|Count1[15]     ; run_module:U_RUN_Inst|Count_MS[2]    ; CLK          ; CLK         ; 1.000        ; -0.072     ; 2.297      ;
++--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'CLK'                                                                                                                          ;
++-------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                            ; To Node                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.296 ; run_module:U_RUN_Inst|Count_MS[1]    ; run_module:U_RUN_Inst|Count_MS[1]    ; CLK          ; CLK         ; 0.000        ; 0.071      ; 0.511      ;
+; 0.296 ; run_module:U_RUN_Inst|Count_MS[2]    ; run_module:U_RUN_Inst|Count_MS[2]    ; CLK          ; CLK         ; 0.000        ; 0.071      ; 0.511      ;
+; 0.296 ; run_module:U_RUN_Inst|Count_MS[6]    ; run_module:U_RUN_Inst|Count_MS[6]    ; CLK          ; CLK         ; 0.000        ; 0.071      ; 0.511      ;
+; 0.296 ; run_module:U_RUN_Inst|Count_MS[7]    ; run_module:U_RUN_Inst|Count_MS[7]    ; CLK          ; CLK         ; 0.000        ; 0.071      ; 0.511      ;
+; 0.296 ; run_module:U_RUN_Inst|Count_MS[8]    ; run_module:U_RUN_Inst|Count_MS[8]    ; CLK          ; CLK         ; 0.000        ; 0.071      ; 0.511      ;
+; 0.296 ; run_module:U_RUN_Inst|Count_MS[9]    ; run_module:U_RUN_Inst|Count_MS[9]    ; CLK          ; CLK         ; 0.000        ; 0.071      ; 0.511      ;
+; 0.297 ; run_module:U_RUN_Inst|Count_MS[3]    ; run_module:U_RUN_Inst|Count_MS[3]    ; CLK          ; CLK         ; 0.000        ; 0.070      ; 0.511      ;
+; 0.297 ; run_module:U_RUN_Inst|Count_MS[4]    ; run_module:U_RUN_Inst|Count_MS[4]    ; CLK          ; CLK         ; 0.000        ; 0.070      ; 0.511      ;
+; 0.297 ; run_module:U_RUN_Inst|Count_MS[5]    ; run_module:U_RUN_Inst|Count_MS[5]    ; CLK          ; CLK         ; 0.000        ; 0.070      ; 0.511      ;
+; 0.297 ; run_module:U_RUN_Inst|Count_MS[0]    ; run_module:U_RUN_Inst|Count_MS[0]    ; CLK          ; CLK         ; 0.000        ; 0.070      ; 0.511      ;
+; 0.297 ; flash_module:U_FLASH_Inst|rLED_Out   ; flash_module:U_FLASH_Inst|rLED_Out   ; CLK          ; CLK         ; 0.000        ; 0.070      ; 0.511      ;
+; 0.304 ; run_module:U_RUN_Inst|rLED_Out[0]    ; run_module:U_RUN_Inst|rLED_Out[0]    ; CLK          ; CLK         ; 0.000        ; 0.071      ; 0.519      ;
+; 0.331 ; run_module:U_RUN_Inst|rLED_Out[0]    ; run_module:U_RUN_Inst|rLED_Out[1]    ; CLK          ; CLK         ; 0.000        ; 0.071      ; 0.546      ;
+; 0.343 ; run_module:U_RUN_Inst|rLED_Out[2]    ; run_module:U_RUN_Inst|rLED_Out[0]    ; CLK          ; CLK         ; 0.000        ; 0.071      ; 0.558      ;
+; 0.476 ; run_module:U_RUN_Inst|rLED_Out[1]    ; run_module:U_RUN_Inst|rLED_Out[2]    ; CLK          ; CLK         ; 0.000        ; 0.071      ; 0.691      ;
+; 0.498 ; flash_module:U_FLASH_Inst|Count1[6]  ; flash_module:U_FLASH_Inst|Count1[6]  ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.699      ;
+; 0.498 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[14] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.699      ;
+; 0.500 ; flash_module:U_FLASH_Inst|Count1[15] ; flash_module:U_FLASH_Inst|Count1[15] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.701      ;
+; 0.501 ; flash_module:U_FLASH_Inst|Count1[12] ; flash_module:U_FLASH_Inst|Count1[12] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.702      ;
+; 0.503 ; flash_module:U_FLASH_Inst|Count1[4]  ; flash_module:U_FLASH_Inst|Count1[4]  ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.704      ;
+; 0.509 ; run_module:U_RUN_Inst|Count1[12]     ; run_module:U_RUN_Inst|Count1[12]     ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.710      ;
+; 0.510 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[9]  ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.711      ;
+; 0.510 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[11] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.711      ;
+; 0.510 ; run_module:U_RUN_Inst|Count1[2]      ; run_module:U_RUN_Inst|Count1[2]      ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.711      ;
+; 0.510 ; run_module:U_RUN_Inst|Count1[7]      ; run_module:U_RUN_Inst|Count1[7]      ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.711      ;
+; 0.511 ; flash_module:U_FLASH_Inst|Count1[16] ; flash_module:U_FLASH_Inst|Count1[16] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.712      ;
+; 0.512 ; flash_module:U_FLASH_Inst|Count1[3]  ; flash_module:U_FLASH_Inst|Count1[3]  ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.713      ;
+; 0.512 ; run_module:U_RUN_Inst|Count1[10]     ; run_module:U_RUN_Inst|Count1[10]     ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.713      ;
+; 0.513 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[19] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.714      ;
+; 0.513 ; run_module:U_RUN_Inst|Count1[3]      ; run_module:U_RUN_Inst|Count1[3]      ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.714      ;
+; 0.514 ; flash_module:U_FLASH_Inst|Count1[2]  ; flash_module:U_FLASH_Inst|Count1[2]  ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.715      ;
+; 0.514 ; run_module:U_RUN_Inst|Count1[5]      ; run_module:U_RUN_Inst|Count1[5]      ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.715      ;
+; 0.514 ; run_module:U_RUN_Inst|Count1[11]     ; run_module:U_RUN_Inst|Count1[11]     ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.715      ;
+; 0.514 ; run_module:U_RUN_Inst|Count1[13]     ; run_module:U_RUN_Inst|Count1[13]     ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.715      ;
+; 0.515 ; flash_module:U_FLASH_Inst|Count1[20] ; flash_module:U_FLASH_Inst|Count1[20] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.716      ;
+; 0.526 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[1]  ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.727      ;
+; 0.536 ; run_module:U_RUN_Inst|rLED_Out[1]    ; run_module:U_RUN_Inst|rLED_Out[0]    ; CLK          ; CLK         ; 0.000        ; 0.071      ; 0.751      ;
+; 0.542 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[0]  ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.743      ;
+; 0.692 ; flash_module:U_FLASH_Inst|Count1[20] ; flash_module:U_FLASH_Inst|Count1[21] ; CLK          ; CLK         ; 0.000        ; 0.393      ; 1.229      ;
+; 0.700 ; run_module:U_RUN_Inst|Count1[13]     ; run_module:U_RUN_Inst|Count1[15]     ; CLK          ; CLK         ; 0.000        ; 0.393      ; 1.237      ;
+; 0.709 ; run_module:U_RUN_Inst|Count1[15]     ; run_module:U_RUN_Inst|Count1[15]     ; CLK          ; CLK         ; 0.000        ; 0.070      ; 0.923      ;
+; 0.745 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[14] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.946      ;
+; 0.745 ; flash_module:U_FLASH_Inst|Count1[15] ; flash_module:U_FLASH_Inst|Count1[16] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.946      ;
+; 0.747 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[15] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.948      ;
+; 0.753 ; run_module:U_RUN_Inst|Count1[12]     ; run_module:U_RUN_Inst|Count1[13]     ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.954      ;
+; 0.754 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[16] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.955      ;
+; 0.755 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[12] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.956      ;
+; 0.755 ; run_module:U_RUN_Inst|Count1[2]      ; run_module:U_RUN_Inst|Count1[3]      ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.956      ;
+; 0.757 ; flash_module:U_FLASH_Inst|Count1[3]  ; flash_module:U_FLASH_Inst|Count1[4]  ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.958      ;
+; 0.757 ; run_module:U_RUN_Inst|Count1[10]     ; run_module:U_RUN_Inst|Count1[11]     ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.958      ;
+; 0.757 ; flash_module:U_FLASH_Inst|Count1[12] ; flash_module:U_FLASH_Inst|Count1[14] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.958      ;
+; 0.758 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[20] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.959      ;
+; 0.759 ; flash_module:U_FLASH_Inst|Count1[4]  ; flash_module:U_FLASH_Inst|Count1[6]  ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.960      ;
+; 0.761 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[9]  ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.962      ;
+; 0.763 ; run_module:U_RUN_Inst|Count1[11]     ; run_module:U_RUN_Inst|Count1[12]     ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.964      ;
+; 0.763 ; flash_module:U_FLASH_Inst|Count1[10] ; flash_module:U_FLASH_Inst|Count1[11] ; CLK          ; CLK         ; 0.000        ; 0.058      ; 0.965      ;
+; 0.763 ; flash_module:U_FLASH_Inst|Count1[2]  ; flash_module:U_FLASH_Inst|Count1[3]  ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.964      ;
+; 0.764 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[19] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.965      ;
+; 0.764 ; flash_module:U_FLASH_Inst|Count1[21] ; flash_module:U_FLASH_Inst|Count1[21] ; CLK          ; CLK         ; 0.000        ; 0.070      ; 0.978      ;
+; 0.769 ; run_module:U_RUN_Inst|Count1[3]      ; run_module:U_RUN_Inst|Count1[5]      ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.970      ;
+; 0.770 ; run_module:U_RUN_Inst|Count1[5]      ; run_module:U_RUN_Inst|Count1[7]      ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.971      ;
+; 0.770 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[2]  ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.971      ;
+; 0.770 ; run_module:U_RUN_Inst|Count1[11]     ; run_module:U_RUN_Inst|Count1[13]     ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.971      ;
+; 0.770 ; flash_module:U_FLASH_Inst|Count1[10] ; flash_module:U_FLASH_Inst|Count1[12] ; CLK          ; CLK         ; 0.000        ; 0.058      ; 0.972      ;
+; 0.770 ; flash_module:U_FLASH_Inst|Count1[2]  ; flash_module:U_FLASH_Inst|Count1[4]  ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.971      ;
+; 0.771 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[20] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.972      ;
+; 0.775 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[21] ; CLK          ; CLK         ; 0.000        ; 0.393      ; 1.312      ;
+; 0.776 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[1]  ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.977      ;
+; 0.779 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.980      ;
+; 0.779 ; run_module:U_RUN_Inst|Count1[12]     ; run_module:U_RUN_Inst|Count1[15]     ; CLK          ; CLK         ; 0.000        ; 0.393      ; 1.316      ;
+; 0.783 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[2]  ; CLK          ; CLK         ; 0.000        ; 0.057      ; 0.984      ;
+; 0.788 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[21] ; CLK          ; CLK         ; 0.000        ; 0.393      ; 1.325      ;
+; 0.796 ; run_module:U_RUN_Inst|Count1[11]     ; run_module:U_RUN_Inst|Count1[15]     ; CLK          ; CLK         ; 0.000        ; 0.393      ; 1.333      ;
+; 0.822 ; run_module:U_RUN_Inst|Count1[7]      ; run_module:U_RUN_Inst|Count1[9]      ; CLK          ; CLK         ; 0.000        ; 0.394      ; 1.360      ;
+; 0.824 ; run_module:U_RUN_Inst|Count1[13]     ; run_module:U_RUN_Inst|Count1[14]     ; CLK          ; CLK         ; 0.000        ; 0.394      ; 1.362      ;
+; 0.825 ; run_module:U_RUN_Inst|Count1[10]     ; run_module:U_RUN_Inst|Count1[9]      ; CLK          ; CLK         ; 0.000        ; 0.394      ; 1.363      ;
+; 0.826 ; run_module:U_RUN_Inst|Count1[10]     ; run_module:U_RUN_Inst|Count1[14]     ; CLK          ; CLK         ; 0.000        ; 0.394      ; 1.364      ;
+; 0.834 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[15] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 1.035      ;
+; 0.834 ; flash_module:U_FLASH_Inst|Count1[7]  ; flash_module:U_FLASH_Inst|Count1[9]  ; CLK          ; CLK         ; 0.000        ; 0.057      ; 1.035      ;
+; 0.841 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[16] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 1.042      ;
+; 0.843 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[11] ; CLK          ; CLK         ; 0.000        ; 0.058      ; 1.045      ;
+; 0.843 ; flash_module:U_FLASH_Inst|Count1[6]  ; flash_module:U_FLASH_Inst|Count1[9]  ; CLK          ; CLK         ; 0.000        ; 0.057      ; 1.044      ;
+; 0.844 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[19] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 1.045      ;
+; 0.846 ; run_module:U_RUN_Inst|Count1[10]     ; run_module:U_RUN_Inst|Count1[12]     ; CLK          ; CLK         ; 0.000        ; 0.057      ; 1.047      ;
+; 0.846 ; flash_module:U_FLASH_Inst|Count1[12] ; flash_module:U_FLASH_Inst|Count1[15] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 1.047      ;
+; 0.850 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[12] ; CLK          ; CLK         ; 0.000        ; 0.058      ; 1.052      ;
+; 0.851 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[14] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 1.052      ;
+; 0.851 ; run_module:U_RUN_Inst|Count1[2]      ; run_module:U_RUN_Inst|Count1[5]      ; CLK          ; CLK         ; 0.000        ; 0.057      ; 1.052      ;
+; 0.851 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[20] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 1.052      ;
+; 0.853 ; flash_module:U_FLASH_Inst|Count1[3]  ; flash_module:U_FLASH_Inst|Count1[6]  ; CLK          ; CLK         ; 0.000        ; 0.057      ; 1.054      ;
+; 0.853 ; run_module:U_RUN_Inst|Count1[10]     ; run_module:U_RUN_Inst|Count1[13]     ; CLK          ; CLK         ; 0.000        ; 0.057      ; 1.054      ;
+; 0.853 ; flash_module:U_FLASH_Inst|Count1[12] ; flash_module:U_FLASH_Inst|Count1[16] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 1.054      ;
+; 0.855 ; run_module:U_RUN_Inst|Count1[7]      ; run_module:U_RUN_Inst|Count1[10]     ; CLK          ; CLK         ; 0.000        ; 0.057      ; 1.056      ;
+; 0.856 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[11] ; CLK          ; CLK         ; 0.000        ; 0.058      ; 1.058      ;
+; 0.856 ; flash_module:U_FLASH_Inst|Count1[16] ; flash_module:U_FLASH_Inst|Count1[19] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 1.057      ;
+; 0.859 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[3]  ; CLK          ; CLK         ; 0.000        ; 0.057      ; 1.060      ;
+; 0.861 ; run_module:U_RUN_Inst|Count1[10]     ; run_module:U_RUN_Inst|Count1[8]      ; CLK          ; CLK         ; 0.000        ; 0.394      ; 1.399      ;
+; 0.862 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[13] ; CLK          ; CLK         ; 0.000        ; 0.057      ; 1.063      ;
+; 0.862 ; run_module:U_RUN_Inst|Count1[7]      ; run_module:U_RUN_Inst|Count1[11]     ; CLK          ; CLK         ; 0.000        ; 0.057      ; 1.063      ;
+; 0.863 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[12] ; CLK          ; CLK         ; 0.000        ; 0.058      ; 1.065      ;
++-------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width: 'CLK'                                                                      ;
++--------+--------------+----------------+-----------------+-------+------------+--------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type            ; Clock ; Clock Edge ; Target                               ;
++--------+--------------+----------------+-----------------+-------+------------+--------------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate       ; CLK   ; Rise       ; CLK                                  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[0]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[10] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[11] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[12] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[13] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[14] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[15] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[16] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[17] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[18] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[19] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[1]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[20] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[21] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[2]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[3]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[4]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[5]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[6]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[7]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[8]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[9]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|rLED_Out   ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[10]     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[11]     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[12]     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[13]     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[14]     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[15]     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[2]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[3]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[4]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[5]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[6]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[7]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[8]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[9]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[0]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[1]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[2]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[3]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[4]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[5]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[6]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[7]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[8]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[9]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|rLED_Out[0]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|rLED_Out[1]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|rLED_Out[2]    ;
+; 0.200  ; 0.384        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|rLED_Out[0]    ;
+; 0.200  ; 0.384        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|rLED_Out[1]    ;
+; 0.200  ; 0.384        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|rLED_Out[2]    ;
+; 0.201  ; 0.385        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|rLED_Out   ;
+; 0.201  ; 0.385        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[14]     ;
+; 0.201  ; 0.385        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[8]      ;
+; 0.201  ; 0.385        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[9]      ;
+; 0.204  ; 0.388        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[4]      ;
+; 0.204  ; 0.388        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[6]      ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[0]  ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[10] ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[11] ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[12] ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[13] ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[14] ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[15] ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[16] ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[17] ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[18] ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[19] ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[1]  ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[20] ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[2]  ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[3]  ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[4]  ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[5]  ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[6]  ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[7]  ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[8]  ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[9]  ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[10]     ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[11]     ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[12]     ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[13]     ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[2]      ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[3]      ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[5]      ;
+; 0.205  ; 0.389        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[7]      ;
+; 0.208  ; 0.392        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[21] ;
+; 0.208  ; 0.392        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[15]     ;
+; 0.208  ; 0.392        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[1]    ;
+; 0.208  ; 0.392        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[2]    ;
+; 0.208  ; 0.392        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[6]    ;
+; 0.208  ; 0.392        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[7]    ;
+; 0.208  ; 0.392        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[8]    ;
+; 0.208  ; 0.392        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[9]    ;
+; 0.209  ; 0.393        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[0]    ;
+; 0.209  ; 0.393        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[3]    ;
+; 0.209  ; 0.393        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[4]    ;
++--------+--------------+----------------+-----------------+-------+------------+--------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; Flash_LED   ; CLK        ; 7.004 ; 7.034 ; Rise       ; CLK             ;
+; Run_LED[*]  ; CLK        ; 7.276 ; 7.227 ; Rise       ; CLK             ;
+;  Run_LED[0] ; CLK        ; 6.799 ; 6.816 ; Rise       ; CLK             ;
+;  Run_LED[1] ; CLK        ; 6.831 ; 6.794 ; Rise       ; CLK             ;
+;  Run_LED[2] ; CLK        ; 7.276 ; 7.227 ; Rise       ; CLK             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; Flash_LED   ; CLK        ; 6.762 ; 6.793 ; Rise       ; CLK             ;
+; Run_LED[*]  ; CLK        ; 6.566 ; 6.560 ; Rise       ; CLK             ;
+;  Run_LED[0] ; CLK        ; 6.566 ; 6.584 ; Rise       ; CLK             ;
+;  Run_LED[1] ; CLK        ; 6.598 ; 6.560 ; Rise       ; CLK             ;
+;  Run_LED[2] ; CLK        ; 7.025 ; 6.976 ; Rise       ; CLK             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Slow 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------+
+; Fast 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; CLK   ; -0.753 ; -17.721           ;
++-------+--------+-------------------+
+
+
++-----------------------------------+
+; Fast 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; CLK   ; 0.178 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; CLK   ; -3.000 ; -56.123                         ;
++-------+--------+---------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'CLK'                                                                                                                          ;
++--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                            ; To Node                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.753 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.702      ;
+; -0.752 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.701      ;
+; -0.751 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.700      ;
+; -0.751 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.700      ;
+; -0.716 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.037     ; 1.666      ;
+; -0.681 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 1.000        ; -0.037     ; 1.631      ;
+; -0.681 ; flash_module:U_FLASH_Inst|Count1[5]  ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.630      ;
+; -0.680 ; flash_module:U_FLASH_Inst|Count1[5]  ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.629      ;
+; -0.679 ; flash_module:U_FLASH_Inst|Count1[5]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.628      ;
+; -0.679 ; flash_module:U_FLASH_Inst|Count1[5]  ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.628      ;
+; -0.651 ; flash_module:U_FLASH_Inst|Count1[21] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.238     ; 1.400      ;
+; -0.650 ; flash_module:U_FLASH_Inst|Count1[21] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.238     ; 1.399      ;
+; -0.649 ; flash_module:U_FLASH_Inst|Count1[21] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.238     ; 1.398      ;
+; -0.649 ; flash_module:U_FLASH_Inst|Count1[21] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.238     ; 1.398      ;
+; -0.644 ; flash_module:U_FLASH_Inst|Count1[5]  ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.037     ; 1.594      ;
+; -0.642 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.590      ;
+; -0.641 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.589      ;
+; -0.640 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.588      ;
+; -0.640 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.588      ;
+; -0.637 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 1.000        ; -0.037     ; 1.587      ;
+; -0.627 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.576      ;
+; -0.626 ; flash_module:U_FLASH_Inst|Count1[7]  ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.575      ;
+; -0.626 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.575      ;
+; -0.626 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.575      ;
+; -0.625 ; flash_module:U_FLASH_Inst|Count1[7]  ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.574      ;
+; -0.625 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.574      ;
+; -0.625 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.574      ;
+; -0.625 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.574      ;
+; -0.624 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.572      ;
+; -0.624 ; flash_module:U_FLASH_Inst|Count1[7]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.573      ;
+; -0.624 ; flash_module:U_FLASH_Inst|Count1[7]  ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.573      ;
+; -0.624 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.573      ;
+; -0.624 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.573      ;
+; -0.623 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.571      ;
+; -0.622 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.570      ;
+; -0.622 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.570      ;
+; -0.614 ; flash_module:U_FLASH_Inst|Count1[21] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.237     ; 1.364      ;
+; -0.612 ; flash_module:U_FLASH_Inst|Count1[5]  ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 1.000        ; -0.037     ; 1.562      ;
+; -0.606 ; flash_module:U_FLASH_Inst|Count1[3]  ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 1.000        ; -0.037     ; 1.556      ;
+; -0.605 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.554      ;
+; -0.599 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.037     ; 1.549      ;
+; -0.594 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.542      ;
+; -0.593 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.541      ;
+; -0.592 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.540      ;
+; -0.592 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.540      ;
+; -0.590 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.037     ; 1.540      ;
+; -0.589 ; flash_module:U_FLASH_Inst|Count1[7]  ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.037     ; 1.539      ;
+; -0.588 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.536      ;
+; -0.587 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.536      ;
+; -0.587 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.535      ;
+; -0.586 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.534      ;
+; -0.586 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.534      ;
+; -0.583 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.532      ;
+; -0.582 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.531      ;
+; -0.581 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.530      ;
+; -0.581 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.530      ;
+; -0.575 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.523      ;
+; -0.574 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.522      ;
+; -0.573 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[13] ; CLK          ; CLK         ; 1.000        ; -0.037     ; 1.523      ;
+; -0.573 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.521      ;
+; -0.573 ; flash_module:U_FLASH_Inst|Count1[10] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.522      ;
+; -0.573 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.521      ;
+; -0.573 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.521      ;
+; -0.572 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.520      ;
+; -0.572 ; flash_module:U_FLASH_Inst|Count1[10] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.521      ;
+; -0.572 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 1.000        ; -0.037     ; 1.522      ;
+; -0.571 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.519      ;
+; -0.571 ; flash_module:U_FLASH_Inst|Count1[10] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.520      ;
+; -0.571 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.519      ;
+; -0.571 ; flash_module:U_FLASH_Inst|Count1[10] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.520      ;
+; -0.558 ; flash_module:U_FLASH_Inst|Count1[2]  ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 1.000        ; -0.037     ; 1.508      ;
+; -0.557 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.506      ;
+; -0.551 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.500      ;
+; -0.546 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.037     ; 1.496      ;
+; -0.538 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.487      ;
+; -0.536 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.485      ;
+; -0.536 ; flash_module:U_FLASH_Inst|Count1[10] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.037     ; 1.486      ;
+; -0.534 ; flash_module:U_FLASH_Inst|Count1[6]  ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.483      ;
+; -0.533 ; flash_module:U_FLASH_Inst|Count1[6]  ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.482      ;
+; -0.532 ; flash_module:U_FLASH_Inst|Count1[6]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.481      ;
+; -0.532 ; flash_module:U_FLASH_Inst|Count1[6]  ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.481      ;
+; -0.525 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[21] ; CLK          ; CLK         ; 1.000        ; 0.154      ; 1.666      ;
+; -0.518 ; flash_module:U_FLASH_Inst|Count1[20] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.466      ;
+; -0.517 ; flash_module:U_FLASH_Inst|Count1[20] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.465      ;
+; -0.516 ; flash_module:U_FLASH_Inst|Count1[20] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.464      ;
+; -0.516 ; flash_module:U_FLASH_Inst|Count1[20] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.464      ;
+; -0.511 ; flash_module:U_FLASH_Inst|Count1[4]  ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.460      ;
+; -0.510 ; flash_module:U_FLASH_Inst|Count1[4]  ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.459      ;
+; -0.509 ; flash_module:U_FLASH_Inst|Count1[4]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.458      ;
+; -0.509 ; flash_module:U_FLASH_Inst|Count1[4]  ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.458      ;
+; -0.504 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[20] ; CLK          ; CLK         ; 1.000        ; -0.037     ; 1.454      ;
+; -0.501 ; flash_module:U_FLASH_Inst|Count1[5]  ; flash_module:U_FLASH_Inst|Count1[13] ; CLK          ; CLK         ; 1.000        ; -0.037     ; 1.451      ;
+; -0.497 ; flash_module:U_FLASH_Inst|Count1[6]  ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.037     ; 1.447      ;
+; -0.495 ; flash_module:U_FLASH_Inst|Count1[15] ; flash_module:U_FLASH_Inst|Count1[5]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.443      ;
+; -0.494 ; flash_module:U_FLASH_Inst|Count1[15] ; flash_module:U_FLASH_Inst|Count1[7]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.442      ;
+; -0.493 ; flash_module:U_FLASH_Inst|Count1[0]  ; run_module:U_RUN_Inst|Count1[14]     ; CLK          ; CLK         ; 1.000        ; 0.155      ; 1.635      ;
+; -0.493 ; flash_module:U_FLASH_Inst|Count1[15] ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.441      ;
+; -0.493 ; flash_module:U_FLASH_Inst|Count1[15] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 1.000        ; -0.039     ; 1.441      ;
+; -0.488 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[21] ; CLK          ; CLK         ; 1.000        ; 0.154      ; 1.629      ;
+; -0.488 ; flash_module:U_FLASH_Inst|Count1[20] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 1.000        ; -0.038     ; 1.437      ;
++--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'CLK'                                                                                                                          ;
++-------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                            ; To Node                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.178 ; run_module:U_RUN_Inst|Count_MS[1]    ; run_module:U_RUN_Inst|Count_MS[1]    ; CLK          ; CLK         ; 0.000        ; 0.045      ; 0.307      ;
+; 0.178 ; run_module:U_RUN_Inst|Count_MS[2]    ; run_module:U_RUN_Inst|Count_MS[2]    ; CLK          ; CLK         ; 0.000        ; 0.045      ; 0.307      ;
+; 0.178 ; run_module:U_RUN_Inst|Count_MS[3]    ; run_module:U_RUN_Inst|Count_MS[3]    ; CLK          ; CLK         ; 0.000        ; 0.045      ; 0.307      ;
+; 0.178 ; run_module:U_RUN_Inst|Count_MS[4]    ; run_module:U_RUN_Inst|Count_MS[4]    ; CLK          ; CLK         ; 0.000        ; 0.045      ; 0.307      ;
+; 0.178 ; run_module:U_RUN_Inst|Count_MS[5]    ; run_module:U_RUN_Inst|Count_MS[5]    ; CLK          ; CLK         ; 0.000        ; 0.045      ; 0.307      ;
+; 0.178 ; run_module:U_RUN_Inst|Count_MS[6]    ; run_module:U_RUN_Inst|Count_MS[6]    ; CLK          ; CLK         ; 0.000        ; 0.045      ; 0.307      ;
+; 0.178 ; run_module:U_RUN_Inst|Count_MS[7]    ; run_module:U_RUN_Inst|Count_MS[7]    ; CLK          ; CLK         ; 0.000        ; 0.045      ; 0.307      ;
+; 0.178 ; run_module:U_RUN_Inst|Count_MS[8]    ; run_module:U_RUN_Inst|Count_MS[8]    ; CLK          ; CLK         ; 0.000        ; 0.045      ; 0.307      ;
+; 0.178 ; run_module:U_RUN_Inst|Count_MS[9]    ; run_module:U_RUN_Inst|Count_MS[9]    ; CLK          ; CLK         ; 0.000        ; 0.045      ; 0.307      ;
+; 0.178 ; run_module:U_RUN_Inst|Count_MS[0]    ; run_module:U_RUN_Inst|Count_MS[0]    ; CLK          ; CLK         ; 0.000        ; 0.045      ; 0.307      ;
+; 0.178 ; flash_module:U_FLASH_Inst|rLED_Out   ; flash_module:U_FLASH_Inst|rLED_Out   ; CLK          ; CLK         ; 0.000        ; 0.045      ; 0.307      ;
+; 0.184 ; run_module:U_RUN_Inst|rLED_Out[0]    ; run_module:U_RUN_Inst|rLED_Out[0]    ; CLK          ; CLK         ; 0.000        ; 0.046      ; 0.314      ;
+; 0.197 ; run_module:U_RUN_Inst|rLED_Out[2]    ; run_module:U_RUN_Inst|rLED_Out[0]    ; CLK          ; CLK         ; 0.000        ; 0.046      ; 0.327      ;
+; 0.199 ; run_module:U_RUN_Inst|rLED_Out[0]    ; run_module:U_RUN_Inst|rLED_Out[1]    ; CLK          ; CLK         ; 0.000        ; 0.046      ; 0.329      ;
+; 0.276 ; run_module:U_RUN_Inst|rLED_Out[1]    ; run_module:U_RUN_Inst|rLED_Out[2]    ; CLK          ; CLK         ; 0.000        ; 0.046      ; 0.406      ;
+; 0.296 ; flash_module:U_FLASH_Inst|Count1[12] ; flash_module:U_FLASH_Inst|Count1[12] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.418      ;
+; 0.297 ; flash_module:U_FLASH_Inst|Count1[4]  ; flash_module:U_FLASH_Inst|Count1[4]  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.419      ;
+; 0.297 ; flash_module:U_FLASH_Inst|Count1[6]  ; flash_module:U_FLASH_Inst|Count1[6]  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.419      ;
+; 0.297 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[14] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.419      ;
+; 0.297 ; flash_module:U_FLASH_Inst|Count1[15] ; flash_module:U_FLASH_Inst|Count1[15] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.419      ;
+; 0.303 ; flash_module:U_FLASH_Inst|Count1[3]  ; flash_module:U_FLASH_Inst|Count1[3]  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.425      ;
+; 0.303 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[9]  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.425      ;
+; 0.303 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[11] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.425      ;
+; 0.303 ; run_module:U_RUN_Inst|Count1[2]      ; run_module:U_RUN_Inst|Count1[2]      ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.425      ;
+; 0.303 ; run_module:U_RUN_Inst|Count1[12]     ; run_module:U_RUN_Inst|Count1[12]     ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.425      ;
+; 0.304 ; flash_module:U_FLASH_Inst|Count1[2]  ; flash_module:U_FLASH_Inst|Count1[2]  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.426      ;
+; 0.304 ; flash_module:U_FLASH_Inst|Count1[16] ; flash_module:U_FLASH_Inst|Count1[16] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.426      ;
+; 0.304 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[19] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.426      ;
+; 0.304 ; run_module:U_RUN_Inst|Count1[3]      ; run_module:U_RUN_Inst|Count1[3]      ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.426      ;
+; 0.304 ; run_module:U_RUN_Inst|Count1[7]      ; run_module:U_RUN_Inst|Count1[7]      ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.426      ;
+; 0.304 ; run_module:U_RUN_Inst|Count1[10]     ; run_module:U_RUN_Inst|Count1[10]     ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.426      ;
+; 0.305 ; flash_module:U_FLASH_Inst|Count1[20] ; flash_module:U_FLASH_Inst|Count1[20] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.427      ;
+; 0.305 ; run_module:U_RUN_Inst|Count1[5]      ; run_module:U_RUN_Inst|Count1[5]      ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.427      ;
+; 0.305 ; run_module:U_RUN_Inst|Count1[11]     ; run_module:U_RUN_Inst|Count1[11]     ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.427      ;
+; 0.305 ; run_module:U_RUN_Inst|Count1[13]     ; run_module:U_RUN_Inst|Count1[13]     ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.427      ;
+; 0.314 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[1]  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.436      ;
+; 0.322 ; run_module:U_RUN_Inst|rLED_Out[1]    ; run_module:U_RUN_Inst|rLED_Out[0]    ; CLK          ; CLK         ; 0.000        ; 0.046      ; 0.452      ;
+; 0.324 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[0]  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.446      ;
+; 0.405 ; run_module:U_RUN_Inst|Count1[15]     ; run_module:U_RUN_Inst|Count1[15]     ; CLK          ; CLK         ; 0.000        ; 0.046      ; 0.535      ;
+; 0.416 ; flash_module:U_FLASH_Inst|Count1[20] ; flash_module:U_FLASH_Inst|Count1[21] ; CLK          ; CLK         ; 0.000        ; 0.237      ; 0.737      ;
+; 0.418 ; run_module:U_RUN_Inst|Count1[13]     ; run_module:U_RUN_Inst|Count1[15]     ; CLK          ; CLK         ; 0.000        ; 0.237      ; 0.739      ;
+; 0.446 ; flash_module:U_FLASH_Inst|Count1[15] ; flash_module:U_FLASH_Inst|Count1[16] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.568      ;
+; 0.448 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[14] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.570      ;
+; 0.448 ; flash_module:U_FLASH_Inst|Count1[21] ; flash_module:U_FLASH_Inst|Count1[21] ; CLK          ; CLK         ; 0.000        ; 0.046      ; 0.578      ;
+; 0.452 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[12] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.574      ;
+; 0.452 ; flash_module:U_FLASH_Inst|Count1[3]  ; flash_module:U_FLASH_Inst|Count1[4]  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.574      ;
+; 0.452 ; run_module:U_RUN_Inst|Count1[2]      ; run_module:U_RUN_Inst|Count1[3]      ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.574      ;
+; 0.452 ; run_module:U_RUN_Inst|Count1[12]     ; run_module:U_RUN_Inst|Count1[13]     ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.574      ;
+; 0.453 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[20] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.575      ;
+; 0.453 ; run_module:U_RUN_Inst|Count1[10]     ; run_module:U_RUN_Inst|Count1[11]     ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.575      ;
+; 0.455 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[15] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.577      ;
+; 0.457 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[17] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.579      ;
+; 0.457 ; flash_module:U_FLASH_Inst|Count1[12] ; flash_module:U_FLASH_Inst|Count1[14] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.579      ;
+; 0.458 ; flash_module:U_FLASH_Inst|Count1[4]  ; flash_module:U_FLASH_Inst|Count1[6]  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.580      ;
+; 0.458 ; flash_module:U_FLASH_Inst|Count1[14] ; flash_module:U_FLASH_Inst|Count1[16] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.580      ;
+; 0.462 ; flash_module:U_FLASH_Inst|Count1[2]  ; flash_module:U_FLASH_Inst|Count1[3]  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.584      ;
+; 0.463 ; run_module:U_RUN_Inst|Count1[11]     ; run_module:U_RUN_Inst|Count1[12]     ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.585      ;
+; 0.463 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[2]  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.585      ;
+; 0.464 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[9]  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.586      ;
+; 0.464 ; flash_module:U_FLASH_Inst|Count1[10] ; flash_module:U_FLASH_Inst|Count1[11] ; CLK          ; CLK         ; 0.000        ; 0.039      ; 0.587      ;
+; 0.465 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[19] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.587      ;
+; 0.465 ; run_module:U_RUN_Inst|Count1[3]      ; run_module:U_RUN_Inst|Count1[5]      ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.587      ;
+; 0.465 ; flash_module:U_FLASH_Inst|Count1[2]  ; flash_module:U_FLASH_Inst|Count1[4]  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.587      ;
+; 0.466 ; run_module:U_RUN_Inst|Count1[10]     ; run_module:U_RUN_Inst|Count1[9]      ; CLK          ; CLK         ; 0.000        ; 0.238      ; 0.788      ;
+; 0.466 ; run_module:U_RUN_Inst|Count1[5]      ; run_module:U_RUN_Inst|Count1[7]      ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.588      ;
+; 0.466 ; run_module:U_RUN_Inst|Count1[11]     ; run_module:U_RUN_Inst|Count1[13]     ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.588      ;
+; 0.467 ; flash_module:U_FLASH_Inst|Count1[10] ; flash_module:U_FLASH_Inst|Count1[12] ; CLK          ; CLK         ; 0.000        ; 0.039      ; 0.590      ;
+; 0.468 ; run_module:U_RUN_Inst|Count1[10]     ; run_module:U_RUN_Inst|Count1[14]     ; CLK          ; CLK         ; 0.000        ; 0.238      ; 0.790      ;
+; 0.468 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[20] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.590      ;
+; 0.469 ; flash_module:U_FLASH_Inst|Count1[19] ; flash_module:U_FLASH_Inst|Count1[21] ; CLK          ; CLK         ; 0.000        ; 0.237      ; 0.790      ;
+; 0.470 ; run_module:U_RUN_Inst|Count1[12]     ; run_module:U_RUN_Inst|Count1[15]     ; CLK          ; CLK         ; 0.000        ; 0.237      ; 0.791      ;
+; 0.473 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[1]  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.595      ;
+; 0.476 ; flash_module:U_FLASH_Inst|Count1[0]  ; flash_module:U_FLASH_Inst|Count1[2]  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.598      ;
+; 0.477 ; run_module:U_RUN_Inst|Count1[10]     ; run_module:U_RUN_Inst|Count1[8]      ; CLK          ; CLK         ; 0.000        ; 0.238      ; 0.799      ;
+; 0.484 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[21] ; CLK          ; CLK         ; 0.000        ; 0.237      ; 0.805      ;
+; 0.484 ; run_module:U_RUN_Inst|Count1[11]     ; run_module:U_RUN_Inst|Count1[15]     ; CLK          ; CLK         ; 0.000        ; 0.237      ; 0.805      ;
+; 0.485 ; run_module:U_RUN_Inst|Count1[7]      ; run_module:U_RUN_Inst|Count1[9]      ; CLK          ; CLK         ; 0.000        ; 0.238      ; 0.807      ;
+; 0.496 ; run_module:U_RUN_Inst|Count1[13]     ; run_module:U_RUN_Inst|Count1[14]     ; CLK          ; CLK         ; 0.000        ; 0.238      ; 0.818      ;
+; 0.511 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[15] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.633      ;
+; 0.511 ; flash_module:U_FLASH_Inst|Count1[7]  ; flash_module:U_FLASH_Inst|Count1[9]  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.633      ;
+; 0.512 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[13] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.634      ;
+; 0.514 ; flash_module:U_FLASH_Inst|Count1[13] ; flash_module:U_FLASH_Inst|Count1[16] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.636      ;
+; 0.514 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[11] ; CLK          ; CLK         ; 0.000        ; 0.039      ; 0.637      ;
+; 0.515 ; flash_module:U_FLASH_Inst|Count1[5]  ; flash_module:U_FLASH_Inst|Count1[6]  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.637      ;
+; 0.516 ; run_module:U_RUN_Inst|Count1[10]     ; run_module:U_RUN_Inst|Count1[12]     ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.638      ;
+; 0.516 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[19] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.638      ;
+; 0.517 ; flash_module:U_FLASH_Inst|Count1[9]  ; flash_module:U_FLASH_Inst|Count1[12] ; CLK          ; CLK         ; 0.000        ; 0.039      ; 0.640      ;
+; 0.518 ; flash_module:U_FLASH_Inst|Count1[11] ; flash_module:U_FLASH_Inst|Count1[14] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.640      ;
+; 0.518 ; flash_module:U_FLASH_Inst|Count1[3]  ; flash_module:U_FLASH_Inst|Count1[6]  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.640      ;
+; 0.518 ; run_module:U_RUN_Inst|Count1[4]      ; run_module:U_RUN_Inst|Count1[5]      ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.640      ;
+; 0.518 ; run_module:U_RUN_Inst|Count1[2]      ; run_module:U_RUN_Inst|Count1[5]      ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.640      ;
+; 0.519 ; flash_module:U_FLASH_Inst|Count1[8]  ; flash_module:U_FLASH_Inst|Count1[8]  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.641      ;
+; 0.519 ; flash_module:U_FLASH_Inst|Count1[18] ; flash_module:U_FLASH_Inst|Count1[18] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.641      ;
+; 0.519 ; run_module:U_RUN_Inst|Count1[10]     ; run_module:U_RUN_Inst|Count1[13]     ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.641      ;
+; 0.519 ; flash_module:U_FLASH_Inst|Count1[17] ; flash_module:U_FLASH_Inst|Count1[20] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.641      ;
+; 0.520 ; flash_module:U_FLASH_Inst|Count1[10] ; flash_module:U_FLASH_Inst|Count1[10] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.642      ;
+; 0.520 ; flash_module:U_FLASH_Inst|Count1[12] ; flash_module:U_FLASH_Inst|Count1[15] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.642      ;
+; 0.521 ; flash_module:U_FLASH_Inst|Count1[6]  ; flash_module:U_FLASH_Inst|Count1[9]  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.643      ;
+; 0.523 ; flash_module:U_FLASH_Inst|Count1[12] ; flash_module:U_FLASH_Inst|Count1[16] ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.645      ;
+; 0.526 ; flash_module:U_FLASH_Inst|Count1[1]  ; flash_module:U_FLASH_Inst|Count1[3]  ; CLK          ; CLK         ; 0.000        ; 0.038      ; 0.648      ;
++-------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width: 'CLK'                                                                      ;
++--------+--------------+----------------+-----------------+-------+------------+--------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type            ; Clock ; Clock Edge ; Target                               ;
++--------+--------------+----------------+-----------------+-------+------------+--------------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate       ; CLK   ; Rise       ; CLK                                  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[0]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[10] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[11] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[12] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[13] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[14] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[15] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[16] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[17] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[18] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[19] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[1]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[20] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[21] ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[2]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[3]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[4]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[5]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[6]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[7]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[8]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[9]  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|rLED_Out   ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[10]     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[11]     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[12]     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[13]     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[14]     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[15]     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[2]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[3]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[4]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[5]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[6]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[7]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[8]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[9]      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[0]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[1]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[2]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[3]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[4]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[5]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[6]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[7]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[8]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[9]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|rLED_Out[0]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|rLED_Out[1]    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; CLK   ; Rise       ; run_module:U_RUN_Inst|rLED_Out[2]    ;
+; -0.082 ; 0.102        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|rLED_Out   ;
+; -0.082 ; 0.102        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[14]     ;
+; -0.082 ; 0.102        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[8]      ;
+; -0.082 ; 0.102        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[9]      ;
+; -0.082 ; 0.102        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|rLED_Out[0]    ;
+; -0.082 ; 0.102        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|rLED_Out[1]    ;
+; -0.082 ; 0.102        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|rLED_Out[2]    ;
+; -0.077 ; 0.107        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[21] ;
+; -0.077 ; 0.107        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[15]     ;
+; -0.077 ; 0.107        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[1]    ;
+; -0.077 ; 0.107        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[2]    ;
+; -0.077 ; 0.107        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[6]    ;
+; -0.077 ; 0.107        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[7]    ;
+; -0.077 ; 0.107        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[8]    ;
+; -0.077 ; 0.107        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[9]    ;
+; -0.072 ; 0.112        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[0]    ;
+; -0.072 ; 0.112        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[3]    ;
+; -0.072 ; 0.112        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[4]    ;
+; -0.072 ; 0.112        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count_MS[5]    ;
+; -0.054 ; 0.130        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[4]      ;
+; -0.054 ; 0.130        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[6]      ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[0]  ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[10] ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[11] ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[12] ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[13] ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[14] ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[15] ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[16] ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[17] ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[18] ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[19] ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[1]  ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[20] ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[2]  ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[3]  ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[4]  ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[5]  ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[6]  ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[7]  ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[8]  ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; flash_module:U_FLASH_Inst|Count1[9]  ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[10]     ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[11]     ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[12]     ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[13]     ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[2]      ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[3]      ;
+; -0.053 ; 0.131        ; 0.184          ; Low Pulse Width ; CLK   ; Rise       ; run_module:U_RUN_Inst|Count1[5]      ;
++--------+--------------+----------------+-----------------+-------+------------+--------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; Flash_LED   ; CLK        ; 4.761 ; 4.613 ; Rise       ; CLK             ;
+; Run_LED[*]  ; CLK        ; 4.783 ; 4.934 ; Rise       ; CLK             ;
+;  Run_LED[0] ; CLK        ; 4.630 ; 4.505 ; Rise       ; CLK             ;
+;  Run_LED[1] ; CLK        ; 4.500 ; 4.613 ; Rise       ; CLK             ;
+;  Run_LED[2] ; CLK        ; 4.783 ; 4.934 ; Rise       ; CLK             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; Flash_LED   ; CLK        ; 4.607 ; 4.467 ; Rise       ; CLK             ;
+; Run_LED[*]  ; CLK        ; 4.358 ; 4.363 ; Rise       ; CLK             ;
+;  Run_LED[0] ; CLK        ; 4.482 ; 4.363 ; Rise       ; CLK             ;
+;  Run_LED[1] ; CLK        ; 4.358 ; 4.465 ; Rise       ; CLK             ;
+;  Run_LED[2] ; CLK        ; 4.629 ; 4.772 ; Rise       ; CLK             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Fast 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -2.044  ; 0.178 ; N/A      ; N/A     ; -3.000              ;
+;  CLK             ; -2.044  ; 0.178 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -68.952 ; 0.0   ; 0.0      ; 0.0     ; -56.123             ;
+;  CLK             ; -68.952 ; 0.000 ; N/A      ; N/A     ; -56.123             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; Flash_LED   ; CLK        ; 7.833 ; 7.744 ; Rise       ; CLK             ;
+; Run_LED[*]  ; CLK        ; 8.016 ; 8.089 ; Rise       ; CLK             ;
+;  Run_LED[0] ; CLK        ; 7.593 ; 7.515 ; Rise       ; CLK             ;
+;  Run_LED[1] ; CLK        ; 7.535 ; 7.589 ; Rise       ; CLK             ;
+;  Run_LED[2] ; CLK        ; 8.016 ; 8.089 ; Rise       ; CLK             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; Flash_LED   ; CLK        ; 4.607 ; 4.467 ; Rise       ; CLK             ;
+; Run_LED[*]  ; CLK        ; 4.358 ; 4.363 ; Rise       ; CLK             ;
+;  Run_LED[0] ; CLK        ; 4.482 ; 4.363 ; Rise       ; CLK             ;
+;  Run_LED[1] ; CLK        ; 4.358 ; 4.465 ; Rise       ; CLK             ;
+;  Run_LED[2] ; CLK        ; 4.629 ; 4.772 ; Rise       ; CLK             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Flash_LED     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; Run_LED[0]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; Run_LED[1]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; Run_LED[2]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; CLK                     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; RSTn                    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Flash_LED     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.29e-09 V                   ; 2.37 V              ; -0.0215 V           ; 0.147 V                              ; 0.101 V                              ; 6.83e-10 s                  ; 6.56e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.29e-09 V                  ; 2.37 V             ; -0.0215 V          ; 0.147 V                             ; 0.101 V                             ; 6.83e-10 s                 ; 6.56e-10 s                 ; No                        ; Yes                       ;
+; Run_LED[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.29e-09 V                   ; 2.37 V              ; -0.0215 V           ; 0.147 V                              ; 0.101 V                              ; 6.83e-10 s                  ; 6.56e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.29e-09 V                  ; 2.37 V             ; -0.0215 V          ; 0.147 V                             ; 0.101 V                             ; 6.83e-10 s                 ; 6.56e-10 s                 ; No                        ; Yes                       ;
+; Run_LED[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.29e-09 V                   ; 2.37 V              ; -0.0215 V           ; 0.147 V                              ; 0.101 V                              ; 6.83e-10 s                  ; 6.56e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.29e-09 V                  ; 2.37 V             ; -0.0215 V          ; 0.147 V                             ; 0.101 V                             ; 6.83e-10 s                 ; 6.56e-10 s                 ; No                        ; Yes                       ;
+; Run_LED[2]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.29e-09 V                   ; 2.37 V              ; -0.0215 V           ; 0.147 V                              ; 0.101 V                              ; 6.83e-10 s                  ; 6.56e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.29e-09 V                  ; 2.37 V             ; -0.0215 V          ; 0.147 V                             ; 0.101 V                             ; 6.83e-10 s                 ; 6.56e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.53e-09 V                   ; 2.38 V              ; -0.0337 V           ; 0.137 V                              ; 0.057 V                              ; 4.67e-10 s                  ; 4.1e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 3.53e-09 V                  ; 2.38 V             ; -0.0337 V          ; 0.137 V                             ; 0.057 V                             ; 4.67e-10 s                 ; 4.1e-10 s                  ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.65e-09 V                   ; 2.37 V              ; -0.00886 V          ; 0.12 V                               ; 0.027 V                              ; 6.61e-10 s                  ; 7.9e-10 s                   ; No                         ; Yes                        ; 2.32 V                      ; 5.65e-09 V                  ; 2.37 V             ; -0.00886 V         ; 0.12 V                              ; 0.027 V                             ; 6.61e-10 s                 ; 7.9e-10 s                  ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Flash_LED     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.24e-07 V                   ; 2.35 V              ; -0.011 V            ; 0.111 V                              ; 0.035 V                              ; 7.77e-10 s                  ; 8.06e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.24e-07 V                  ; 2.35 V             ; -0.011 V           ; 0.111 V                             ; 0.035 V                             ; 7.77e-10 s                 ; 8.06e-10 s                 ; Yes                       ; Yes                       ;
+; Run_LED[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.24e-07 V                   ; 2.35 V              ; -0.011 V            ; 0.111 V                              ; 0.035 V                              ; 7.77e-10 s                  ; 8.06e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.24e-07 V                  ; 2.35 V             ; -0.011 V           ; 0.111 V                             ; 0.035 V                             ; 7.77e-10 s                 ; 8.06e-10 s                 ; Yes                       ; Yes                       ;
+; Run_LED[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.24e-07 V                   ; 2.35 V              ; -0.011 V            ; 0.111 V                              ; 0.035 V                              ; 7.77e-10 s                  ; 8.06e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.24e-07 V                  ; 2.35 V             ; -0.011 V           ; 0.111 V                             ; 0.035 V                             ; 7.77e-10 s                 ; 8.06e-10 s                 ; Yes                       ; Yes                       ;
+; Run_LED[2]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.24e-07 V                   ; 2.35 V              ; -0.011 V            ; 0.111 V                              ; 0.035 V                              ; 7.77e-10 s                  ; 8.06e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.24e-07 V                  ; 2.35 V             ; -0.011 V           ; 0.111 V                             ; 0.035 V                             ; 7.77e-10 s                 ; 8.06e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.67e-07 V                   ; 2.35 V              ; -0.0121 V           ; 0.081 V                              ; 0.025 V                              ; 5.28e-10 s                  ; 4.82e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 5.67e-07 V                  ; 2.35 V             ; -0.0121 V          ; 0.081 V                             ; 0.025 V                             ; 5.28e-10 s                 ; 4.82e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 9.35e-07 V                   ; 2.35 V              ; -0.00478 V          ; 0.185 V                              ; 0.019 V                              ; 7.22e-10 s                  ; 9.86e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 9.35e-07 V                  ; 2.35 V             ; -0.00478 V         ; 0.185 V                             ; 0.019 V                             ; 7.22e-10 s                 ; 9.86e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Flash_LED     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.78e-08 V                   ; 2.71 V              ; -0.0338 V           ; 0.25 V                               ; 0.066 V                              ; 4.98e-10 s                  ; 5.2e-10 s                   ; No                         ; Yes                        ; 2.62 V                      ; 2.78e-08 V                  ; 2.71 V             ; -0.0338 V          ; 0.25 V                              ; 0.066 V                             ; 4.98e-10 s                 ; 5.2e-10 s                  ; No                        ; Yes                       ;
+; Run_LED[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.78e-08 V                   ; 2.71 V              ; -0.0338 V           ; 0.25 V                               ; 0.066 V                              ; 4.98e-10 s                  ; 5.2e-10 s                   ; No                         ; Yes                        ; 2.62 V                      ; 2.78e-08 V                  ; 2.71 V             ; -0.0338 V          ; 0.25 V                              ; 0.066 V                             ; 4.98e-10 s                 ; 5.2e-10 s                  ; No                        ; Yes                       ;
+; Run_LED[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.78e-08 V                   ; 2.71 V              ; -0.0338 V           ; 0.25 V                               ; 0.066 V                              ; 4.98e-10 s                  ; 5.2e-10 s                   ; No                         ; Yes                        ; 2.62 V                      ; 2.78e-08 V                  ; 2.71 V             ; -0.0338 V          ; 0.25 V                              ; 0.066 V                             ; 4.98e-10 s                 ; 5.2e-10 s                  ; No                        ; Yes                       ;
+; Run_LED[2]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.78e-08 V                   ; 2.71 V              ; -0.0338 V           ; 0.25 V                               ; 0.066 V                              ; 4.98e-10 s                  ; 5.2e-10 s                   ; No                         ; Yes                        ; 2.62 V                      ; 2.78e-08 V                  ; 2.71 V             ; -0.0338 V          ; 0.25 V                              ; 0.066 V                             ; 4.98e-10 s                 ; 5.2e-10 s                  ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.19e-08 V                   ; 2.71 V              ; -0.0718 V           ; 0.277 V                              ; 0.167 V                              ; 3.12e-10 s                  ; 3.02e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.19e-08 V                  ; 2.71 V             ; -0.0718 V          ; 0.277 V                             ; 0.167 V                             ; 3.12e-10 s                 ; 3.02e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.52e-08 V                   ; 2.7 V               ; -0.0198 V           ; 0.2 V                                ; 0.049 V                              ; 4.85e-10 s                  ; 6.73e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 3.52e-08 V                  ; 2.7 V              ; -0.0198 V          ; 0.2 V                               ; 0.049 V                             ; 4.85e-10 s                 ; 6.73e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLK        ; CLK      ; 1041     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLK        ; CLK      ; 1041     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 50    ; 50   ;
+; Unconstrained Output Ports      ; 4     ; 4    ;
+; Unconstrained Output Port Paths ; 4     ; 4    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 12.1 Build 177 11/07/2012 SJ Full Version
+    Info: Processing started: Sun Nov 13 20:18:23 2016
+Info: Command: quartus_sta LED2 -c LED2
+Info: qsta_default_script.tcl version: #1
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Core supply voltage is 1.2V
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'LED2.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLK CLK
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For details on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.044
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.044       -68.952 CLK 
+Info (332146): Worst-case hold slack is 0.341
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.341         0.000 CLK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.000       -53.000 CLK 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For details on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.722
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.722       -55.990 CLK 
+Info (332146): Worst-case hold slack is 0.296
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.296         0.000 CLK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.000       -53.000 CLK 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For details on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.753
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.753       -17.721 CLK 
+Info (332146): Worst-case hold slack is 0.178
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.178         0.000 CLK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.000       -56.123 CLK 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 494 megabytes
+    Info: Processing ended: Sun Nov 13 20:18:25 2016
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

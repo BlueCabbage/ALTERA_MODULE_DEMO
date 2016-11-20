@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Nov 19 23:29:32 2016
+Quartus II 64-Bit Version : 12.1 Build 177 11/07/2012 SJ Full Version
+Revision Name : KEY_INTERFACE
+Top-level Entity Name : TST_TOP
+Family : Cyclone IV E
+Total logic elements : 53
+    Total combinational functions : 51
+    Dedicated logic registers : 39
+Total registers : 39
+Total pins : 12
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

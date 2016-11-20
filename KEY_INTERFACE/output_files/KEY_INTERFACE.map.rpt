@@ -1,0 +1,727 @@
+Analysis & Synthesis report for KEY_INTERFACE
+Sat Nov 19 23:29:32 2016
+Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|state_index
+  9. State Machine - |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|state_index
+ 10. State Machine - |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|state_index
+ 11. State Machine - |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|state_index
+ 12. State Machine - |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|state_index
+ 13. Registers Removed During Synthesis
+ 14. Removed Registers Triggering Further Register Optimizations
+ 15. General Register Statistics
+ 16. Inverted Register Statistics
+ 17. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 18. Parameter Settings for User Entity Instance: KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst
+ 19. Parameter Settings for User Entity Instance: KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst
+ 20. Parameter Settings for User Entity Instance: KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst
+ 21. Parameter Settings for User Entity Instance: KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst
+ 22. Parameter Settings for User Entity Instance: KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst
+ 23. Parameter Settings for User Entity Instance: KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst
+ 24. Parameter Settings for User Entity Instance: KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst
+ 25. Parameter Settings for User Entity Instance: KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst
+ 26. Parameter Settings for User Entity Instance: KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst
+ 27. Parameter Settings for User Entity Instance: KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst
+ 28. Port Connectivity Checks: "KEY_INTERFACE_MODULE:U1"
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                   ;
++------------------------------------+-------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Nov 19 23:29:32 2016     ;
+; Quartus II 64-Bit Version          ; 12.1 Build 177 11/07/2012 SJ Full Version ;
+; Revision Name                      ; KEY_INTERFACE                             ;
+; Top-level Entity Name              ; TST_TOP                                   ;
+; Family                             ; Cyclone IV E                              ;
+; Total logic elements               ; 53                                        ;
+;     Total combinational functions  ; 51                                        ;
+;     Dedicated logic registers      ; 39                                        ;
+; Total registers                    ; 39                                        ;
+; Total pins                         ; 12                                        ;
+; Total virtual pins                 ; 0                                         ;
+; Total memory bits                  ; 0                                         ;
+; Embedded Multiplier 9-bit elements ; 0                                         ;
+; Total PLLs                         ; 0                                         ;
++------------------------------------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE15F17C8       ;                    ;
+; Top-level entity name                                                      ; TST_TOP            ; KEY_INTERFACE      ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                           ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                             ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
+; SRC/TST.v                        ; yes             ; User Verilog HDL File  ; D:/FPGA_PROC/ALTERA_MODULE_PROC/KEY_INTERFACE/SRC/TST.v                  ;         ;
+; SRC/KEY_MODULE.v                 ; yes             ; User Verilog HDL File  ; D:/FPGA_PROC/ALTERA_MODULE_PROC/KEY_INTERFACE/SRC/KEY_MODULE.v           ;         ;
+; SRC/KEY_INTERFACE_MODULE.v       ; yes             ; User Verilog HDL File  ; D:/FPGA_PROC/ALTERA_MODULE_PROC/KEY_INTERFACE/SRC/KEY_INTERFACE_MODULE.v ;         ;
+; SRC/KEY_DETECT_MODULE.v          ; yes             ; User Verilog HDL File  ; D:/FPGA_PROC/ALTERA_MODULE_PROC/KEY_INTERFACE/SRC/KEY_DETECT_MODULE.v    ;         ;
+; SRC/DELAY_MODULE.v               ; yes             ; User Verilog HDL File  ; D:/FPGA_PROC/ALTERA_MODULE_PROC/KEY_INTERFACE/SRC/DELAY_MODULE.v         ;         ;
+; SRC/TST_TOP.v                    ; yes             ; User Verilog HDL File  ; D:/FPGA_PROC/ALTERA_MODULE_PROC/KEY_INTERFACE/SRC/TST_TOP.v              ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 53    ;
+;                                             ;       ;
+; Total combinational functions               ; 51    ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 13    ;
+;     -- 3 input functions                    ; 7     ;
+;     -- <=2 input functions                  ; 31    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 27    ;
+;     -- arithmetic mode                      ; 24    ;
+;                                             ;       ;
+; Total registers                             ; 39    ;
+;     -- Dedicated logic registers            ; 39    ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 12    ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out                             ; 39    ;
+; Total fan-out                               ; 292   ;
+; Average fan-out                             ; 2.56  ;
++---------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                             ;
++-------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                            ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                          ; Library Name ;
++-------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------+--------------+
+; |TST_TOP                                              ; 51 (0)            ; 39 (0)       ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |TST_TOP                                                                                                     ;              ;
+;    |KEY_INTERFACE_MODULE:U1|                          ; 50 (0)            ; 38 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TST_TOP|KEY_INTERFACE_MODULE:U1                                                                             ;              ;
+;       |KEY_MODULE:gen_key_module[0].U11|              ; 50 (0)            ; 38 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11                                            ;              ;
+;          |DELAY_MODULE:U_delay_module_Inst|           ; 34 (34)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst           ;              ;
+;          |KEY_DETECT_MODULE:U_key_detect_module_Inst| ; 16 (16)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst ;              ;
+;    |TST:U2|                                           ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TST_TOP|TST:U2                                                                                              ;              ;
++-------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|state_index ;
++----------------+----------------+----------------+-----------------------------------------------------------------------------+
+; Name           ; state_index.00 ; state_index.10 ; state_index.01                                                              ;
++----------------+----------------+----------------+-----------------------------------------------------------------------------+
+; state_index.00 ; 0              ; 0              ; 0                                                                           ;
+; state_index.01 ; 1              ; 0              ; 1                                                                           ;
+; state_index.10 ; 1              ; 1              ; 0                                                                           ;
++----------------+----------------+----------------+-----------------------------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|state_index ;
++----------------+----------------+----------------+-----------------------------------------------------------------------------+
+; Name           ; state_index.00 ; state_index.10 ; state_index.01                                                              ;
++----------------+----------------+----------------+-----------------------------------------------------------------------------+
+; state_index.00 ; 0              ; 0              ; 0                                                                           ;
+; state_index.01 ; 1              ; 0              ; 1                                                                           ;
+; state_index.10 ; 1              ; 1              ; 0                                                                           ;
++----------------+----------------+----------------+-----------------------------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|state_index ;
++----------------+----------------+----------------+-----------------------------------------------------------------------------+
+; Name           ; state_index.00 ; state_index.10 ; state_index.01                                                              ;
++----------------+----------------+----------------+-----------------------------------------------------------------------------+
+; state_index.00 ; 0              ; 0              ; 0                                                                           ;
+; state_index.01 ; 1              ; 0              ; 1                                                                           ;
+; state_index.10 ; 1              ; 1              ; 0                                                                           ;
++----------------+----------------+----------------+-----------------------------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|state_index ;
++----------------+----------------+----------------+-----------------------------------------------------------------------------+
+; Name           ; state_index.00 ; state_index.10 ; state_index.01                                                              ;
++----------------+----------------+----------------+-----------------------------------------------------------------------------+
+; state_index.00 ; 0              ; 0              ; 0                                                                           ;
+; state_index.01 ; 1              ; 0              ; 1                                                                           ;
+; state_index.10 ; 1              ; 1              ; 0                                                                           ;
++----------------+----------------+----------------+-----------------------------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|state_index ;
++----------------+----------------+----------------+-----------------------------------------------------------------------------+
+; Name           ; state_index.00 ; state_index.10 ; state_index.01                                                              ;
++----------------+----------------+----------------+-----------------------------------------------------------------------------+
+; state_index.00 ; 0              ; 0              ; 0                                                                           ;
+; state_index.01 ; 1              ; 0              ; 1                                                                           ;
+; state_index.10 ; 1              ; 1              ; 0                                                                           ;
++----------------+----------------+----------------+-----------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                                          ;
++----------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                  ; Reason for Removal                                                                                                         ;
++----------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|L2H_F1     ; Stuck at GND due to stuck port data_in                                                                                     ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|L2H_F2     ; Lost fanout                                                                                                                ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|L2H_F1     ; Stuck at GND due to stuck port data_in                                                                                     ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|L2H_F2     ; Lost fanout                                                                                                                ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|L2H_F1     ; Stuck at GND due to stuck port data_in                                                                                     ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|L2H_F2     ; Lost fanout                                                                                                                ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|L2H_F1     ; Stuck at GND due to stuck port data_in                                                                                     ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|L2H_F2     ; Lost fanout                                                                                                                ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|L2H_F1     ; Stuck at GND due to stuck port data_in                                                                                     ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|L2H_F2     ; Lost fanout                                                                                                                ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[10] ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[10] ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[10] ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[10] ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[10] ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[10] ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[10] ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[10] ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[9]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[9]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[9]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[9]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[9]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[9]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[9]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[9]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[8]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[8]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[8]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[8]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[8]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[8]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[8]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[8]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[7]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[7]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[7]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[7]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[7]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[7]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[7]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[7]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[6]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[6]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[6]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[6]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[6]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[6]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[6]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[6]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[5]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[5]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[5]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[5]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[5]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[5]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[5]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[5]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[4]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[4]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[4]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[4]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[4]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[4]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[4]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[4]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[3]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[3]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[3]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[3]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[3]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[3]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[3]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[3]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[2]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[2]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[2]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[2]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[2]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[2]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[2]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[2]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[1]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[1]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[1]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[1]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[1]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[1]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[1]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[1]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[0]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[0]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[0]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[0]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[0]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[0]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[0]  ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|Count1[0]  ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|isEn       ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|isEn       ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|isEn       ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|isEn       ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|isEn       ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|isEn       ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|isEn       ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|isEn       ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|H2L_F1     ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|H2L_F1     ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|H2L_F1     ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|H2L_F1     ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|H2L_F1     ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|H2L_F1     ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|H2L_F1     ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|H2L_F1     ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|H2L_F2     ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|H2L_F2     ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|H2L_F2     ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|H2L_F2     ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|H2L_F2     ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|H2L_F2     ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|H2L_F2     ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|H2L_F2     ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|rPin_Out             ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|rPin_Out             ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|rPin_Out             ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|rPin_Out             ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|rPin_Out             ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|rPin_Out             ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|rPin_Out             ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|rPin_Out             ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[3]          ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[3]          ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[3]          ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[3]          ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[3]          ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[3]          ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[3]          ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[3]          ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[2]          ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[2]          ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[2]          ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[2]          ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[2]          ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[2]          ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[2]          ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[2]          ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[1]          ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[1]          ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[1]          ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[1]          ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[1]          ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[1]          ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[1]          ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[1]          ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[0]          ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[0]          ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[0]          ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[0]          ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[0]          ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[0]          ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[0]          ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[0]          ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|state_index.00       ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|state_index.00       ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|state_index.00       ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|state_index.00       ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|state_index.00       ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|state_index.00       ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|state_index.00       ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|state_index.00       ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|state_index.01       ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|state_index.01       ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|state_index.01       ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|state_index.01       ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|state_index.01       ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|state_index.01       ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|state_index.01       ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|state_index.01       ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|state_index.10       ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|state_index.10       ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|state_index.10       ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|state_index.10       ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|state_index.10       ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|state_index.10       ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|state_index.10       ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|state_index.10       ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|Count1[15]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[15]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|Count1[15]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[15]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|Count1[15]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[15]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|Count1[15]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[15]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|Count1[14]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[14]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|Count1[14]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[14]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|Count1[14]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[14]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|Count1[14]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[14]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|Count1[13]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[13]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|Count1[13]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[13]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|Count1[13]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[13]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|Count1[13]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[13]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|Count1[12]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[12]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|Count1[12]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[12]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|Count1[12]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[12]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|Count1[12]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[12]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|Count1[11]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[11]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|Count1[11]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[11]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|Count1[11]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[11]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|Count1[11]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[11]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|Count1[10]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[10]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|Count1[10]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[10]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|Count1[10]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[10]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|Count1[10]           ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[10]           ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|Count1[9]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[9]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|Count1[9]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[9]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|Count1[9]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[9]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|Count1[9]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[9]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|Count1[8]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[8]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|Count1[8]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[8]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|Count1[8]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[8]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|Count1[8]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[8]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|Count1[7]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[7]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|Count1[7]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[7]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|Count1[7]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[7]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|Count1[7]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[7]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|Count1[6]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[6]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|Count1[6]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[6]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|Count1[6]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[6]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|Count1[6]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[6]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|Count1[5]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[5]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|Count1[5]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[5]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|Count1[5]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[5]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|Count1[5]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[5]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|Count1[4]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[4]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|Count1[4]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[4]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|Count1[4]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[4]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|Count1[4]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[4]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|Count1[3]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[3]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|Count1[3]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[3]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|Count1[3]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[3]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|Count1[3]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[3]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|Count1[2]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[2]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|Count1[2]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[2]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|Count1[2]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[2]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|Count1[2]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[2]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|Count1[1]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[1]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|Count1[1]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[1]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|Count1[1]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[1]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|Count1[1]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[1]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|Count1[0]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[0]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|Count1[0]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[0]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|Count1[0]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[0]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|Count1[0]            ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[0]            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|isCount              ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|isCount              ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|isCount              ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|isCount              ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|isCount              ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|isCount              ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|isCount              ; Merged with KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|isCount              ;
+; TST:U2|rPin_State[0..3]                                                                                        ; Stuck at GND due to stuck port clock_enable                                                                                ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|state_index.10       ; Stuck at GND due to stuck port data_in                                                                                     ;
+; Total Number of Removed Registers = 171                                                                        ;                                                                                                                            ;
++----------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                                         ;
++------------------------------------------------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                              ; Reason for Removal        ; Registers Removed due to This Register                                                                     ;
++------------------------------------------------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------+
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|L2H_F1 ; Stuck at GND              ; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|L2H_F2 ;
+;                                                                                                            ; due to stuck port data_in ;                                                                                                            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|L2H_F1 ; Stuck at GND              ; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|L2H_F2 ;
+;                                                                                                            ; due to stuck port data_in ;                                                                                                            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|L2H_F1 ; Stuck at GND              ; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|L2H_F2 ;
+;                                                                                                            ; due to stuck port data_in ;                                                                                                            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|L2H_F1 ; Stuck at GND              ; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|L2H_F2 ;
+;                                                                                                            ; due to stuck port data_in ;                                                                                                            ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|L2H_F1 ; Stuck at GND              ; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|L2H_F2 ;
+;                                                                                                            ; due to stuck port data_in ;                                                                                                            ;
++------------------------------------------------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 39    ;
+; Number of registers using Synchronous Clear  ; 16    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 39    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 14    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                         ;
++------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                          ; Fan out ;
++------------------------------------------------------------------------------------------------------------+---------+
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|H2L_F1 ; 2       ;
+; KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst|H2L_F2 ; 1       ;
+; Total number of inverted registers = 2                                                                     ;         ;
++------------------------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|Count1[2]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|Count1[2]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|Count1[1]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|Count1[3]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count1[13]  ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[0] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[0] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[3] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[3] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Count_MS[1] ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst|Selector2   ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst|Selector1   ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst|Selector0   ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst|Selector0   ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TST_TOP|KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst|Selector2   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst ;
++----------------+-------------+-------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value       ; Type                                                                                                              ;
++----------------+-------------+-------------------------------------------------------------------------------------------------------------------+
+; T100US         ; 01110000111 ; Unsigned Binary                                                                                                   ;
++----------------+-------------+-------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst ;
++----------------+------------------+----------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value            ; Type                                                                                               ;
++----------------+------------------+----------------------------------------------------------------------------------------------------+
+; T1MS           ; 1100001101001111 ; Unsigned Binary                                                                                    ;
++----------------+------------------+----------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst ;
++----------------+-------------+-------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value       ; Type                                                                                                              ;
++----------------+-------------+-------------------------------------------------------------------------------------------------------------------+
+; T100US         ; 01110000111 ; Unsigned Binary                                                                                                   ;
++----------------+-------------+-------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[1].U11|DELAY_MODULE:U_delay_module_Inst ;
++----------------+------------------+----------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value            ; Type                                                                                               ;
++----------------+------------------+----------------------------------------------------------------------------------------------------+
+; T1MS           ; 1100001101001111 ; Unsigned Binary                                                                                    ;
++----------------+------------------+----------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst ;
++----------------+-------------+-------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value       ; Type                                                                                                              ;
++----------------+-------------+-------------------------------------------------------------------------------------------------------------------+
+; T100US         ; 01110000111 ; Unsigned Binary                                                                                                   ;
++----------------+-------------+-------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[2].U11|DELAY_MODULE:U_delay_module_Inst ;
++----------------+------------------+----------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value            ; Type                                                                                               ;
++----------------+------------------+----------------------------------------------------------------------------------------------------+
+; T1MS           ; 1100001101001111 ; Unsigned Binary                                                                                    ;
++----------------+------------------+----------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst ;
++----------------+-------------+-------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value       ; Type                                                                                                              ;
++----------------+-------------+-------------------------------------------------------------------------------------------------------------------+
+; T100US         ; 01110000111 ; Unsigned Binary                                                                                                   ;
++----------------+-------------+-------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[3].U11|DELAY_MODULE:U_delay_module_Inst ;
++----------------+------------------+----------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value            ; Type                                                                                               ;
++----------------+------------------+----------------------------------------------------------------------------------------------------+
+; T1MS           ; 1100001101001111 ; Unsigned Binary                                                                                    ;
++----------------+------------------+----------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst ;
++----------------+-------------+-------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value       ; Type                                                                                                              ;
++----------------+-------------+-------------------------------------------------------------------------------------------------------------------+
+; T100US         ; 01110000111 ; Unsigned Binary                                                                                                   ;
++----------------+-------------+-------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[4].U11|DELAY_MODULE:U_delay_module_Inst ;
++----------------+------------------+----------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value            ; Type                                                                                               ;
++----------------+------------------+----------------------------------------------------------------------------------------------------+
+; T1MS           ; 1100001101001111 ; Unsigned Binary                                                                                    ;
++----------------+------------------+----------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "KEY_INTERFACE_MODULE:U1"                                                                                                                        ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                        ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; Key_In ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "Key_In[4..1]" will be connected to GND. ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 12.1 Build 177 11/07/2012 SJ Full Version
+    Info: Processing started: Sat Nov 19 23:29:31 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off KEY_INTERFACE -c KEY_INTERFACE
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file src/tst.v
+    Info (12023): Found entity 1: TST
+Info (12021): Found 1 design units, including 1 entities, in source file src/top_module.v
+    Info (12023): Found entity 1: top_module
+Info (12021): Found 1 design units, including 1 entities, in source file src/option_pwm_module.v
+    Info (12023): Found entity 1: OPTION_PWM_MODULE
+Info (12021): Found 1 design units, including 1 entities, in source file src/key_module.v
+    Info (12023): Found entity 1: KEY_MODULE
+Info (12021): Found 1 design units, including 1 entities, in source file src/key_interface_module.v
+    Info (12023): Found entity 1: KEY_INTERFACE_MODULE
+Warning (10229): Verilog HDL Expression warning at KEY_DETECT_MODULE.v(20): truncated literal to match 11 bits
+Info (12021): Found 1 design units, including 1 entities, in source file src/key_detect_module.v
+    Info (12023): Found entity 1: KEY_DETECT_MODULE
+Info (12021): Found 1 design units, including 1 entities, in source file src/delay_module.v
+    Info (12023): Found entity 1: DELAY_MODULE
+Info (12021): Found 1 design units, including 1 entities, in source file src/tst_top.v
+    Info (12023): Found entity 1: TST_TOP
+Warning (10236): Verilog HDL Implicit Net warning at OPTION_PWM_MODULE.v(93): created implicit net for "Pin_Out"
+Warning (10236): Verilog HDL Implicit Net warning at TST_TOP.v(25): created implicit net for "Key_Input"
+Info (12127): Elaborating entity "TST_TOP" for the top level hierarchy
+Info (12128): Elaborating entity "KEY_INTERFACE_MODULE" for hierarchy "KEY_INTERFACE_MODULE:U1"
+Info (12128): Elaborating entity "KEY_MODULE" for hierarchy "KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11"
+Info (12128): Elaborating entity "KEY_DETECT_MODULE" for hierarchy "KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|KEY_DETECT_MODULE:U_key_detect_module_Inst"
+Info (12128): Elaborating entity "DELAY_MODULE" for hierarchy "KEY_INTERFACE_MODULE:U1|KEY_MODULE:gen_key_module[0].U11|DELAY_MODULE:U_delay_module_Inst"
+Info (12128): Elaborating entity "TST" for hierarchy "TST:U2"
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "Key_Out[0]" is stuck at GND
+    Warning (13410): Pin "Key_Out[1]" is stuck at GND
+    Warning (13410): Pin "Key_Out[2]" is stuck at GND
+    Warning (13410): Pin "Key_Out[3]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 5 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 5 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "Key_In[0]"
+    Warning (15610): No output dependent on input pin "Key_In[1]"
+    Warning (15610): No output dependent on input pin "Key_In[2]"
+    Warning (15610): No output dependent on input pin "Key_In[3]"
+    Warning (15610): No output dependent on input pin "Key_In[4]"
+Info (21057): Implemented 65 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 5 output pins
+    Info (21061): Implemented 53 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 436 megabytes
+    Info: Processing ended: Sat Nov 19 23:29:32 2016
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
