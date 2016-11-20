@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sun Nov 20 18:27:58 2016
+Quartus II 64-Bit Version : 12.1 Build 177 11/07/2012 SJ Full Version
+Revision Name : BUZZER_INTERFACE
+Top-level Entity Name : BUZZER_INTERFACE_DEMO
+Family : Cyclone IV E
+Total logic elements : 706
+    Total combinational functions : 471
+    Dedicated logic registers : 519
+Total registers : 519
+Total pins : 3
+Total virtual pins : 0
+Total memory bits : 1,792
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

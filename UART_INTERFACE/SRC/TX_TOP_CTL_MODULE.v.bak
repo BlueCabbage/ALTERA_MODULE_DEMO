@@ -1,0 +1,77 @@
+/////////////////////////////////////////////////////
+//// TX_TOP_CTL_MODULE.v
+//// 				ZHAOCHAO
+//// 					2016-11-20
+/////////////////////////////////////////////////////////////
+////
+
+module TX_TOP_CTL_MODULE
+(
+	CLK, RSTn,
+	Empty_Sig,
+	FIFO_Read_Data,
+	Read_Req_Sig,
+	TX_Done_Sog,
+	TX_Data,
+	TX_En_Sig
+);
+
+	input CLK;
+	input RSTn;
+	input Empty_Sig;
+	input TX_Done_Sig;
+	input [7:0]FIFO_Read_Data;
+	output Read_Req_Sig;
+	output [7:0]TX_Data;
+	output TX_En_Sig;
+	
+	
+	reg [1:0]state_index;
+	reg isRead;
+	reg isTX;
+	
+	always@(posedge CLK or negedge RSTn)
+		if (!RSTn)
+			begin
+				state_index <= 2'd0;
+				isRead <= 1'b0;
+				isTX <= 1'b0;
+			end
+		else 
+			case (state_index)
+				2'd0:
+					if (!Empty_Sig)
+						state_index <= state_index + 1'b1;
+				
+				2'd1:
+					begin
+						isRead <= 1'b1;
+						state_index <= state_index + 1'b1;
+					end
+					
+				2'd2:
+					begin
+						isRead <= 1'b0;
+						state_index <= state_index + 1'b1;
+					end
+					
+				2'd3:
+					if (TX_Done_Sig)
+						begin
+							state_index <= 2'd0;
+							isTX <= 1'b0;
+						end
+					else
+						begin
+							isTX <= 1'b1;
+						end
+						
+			endcase
+			
+	//////////////////////////////////
+	
+	assign Read_Req_Sig = isRead;
+	assign TX_En_Sig = isTX;
+	assign TX_Data = FIFO_Read_Data;
+	
+endmodule

@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="UART_INTERFACE">
+		<CBX_INST_ENTRY INSTANCE_NAME="|rx_tx_interface_demo|RX_INTERFACE:U1|RX_FIFO_MODULE:U3|scfifo:scfifo_component" CBX_FILE_NAME="scfifo_uj71.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|rx_tx_interface_demo|TX_INTERFACE:U3|TX_FIFO_MODULE:U1|scfifo:scfifo_component" CBX_FILE_NAME="scfifo_vj71.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

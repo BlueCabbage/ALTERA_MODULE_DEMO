@@ -1,0 +1,85 @@
+///////////////////////////////////////////////
+//// inter_ctl_module.v
+//// 				ZHAOCHAO
+//// 					2016-11-20
+///////////////////////////////////////////////////////////
+////
+
+module inter_ctl_module
+(
+	CLK, RSTn,
+	Empty_Sig,
+	FIFO_Read_Data,
+	Read_Req_Sig,
+	Full_Sig,
+	FIFO_Write_Data,
+	Write_Req_Sig
+);
+
+	input CLK;
+	input RSTn;
+	input Empty_Sig;
+	input [7:0]FIFO_Read_Data;
+	input Full_Sig;
+	output Write_Req_Sig;
+	output Read_Req_Sig;
+	output [7:0]FIFO_Write_Data;
+	
+	
+	///////////////////////////////////////////////////
+	
+	reg [2:0]state_index;
+	reg isRead;
+	reg isWrite;
+	
+	always@(posedge CLK or negedge RSTn)
+		if (!RSTn)
+			begin
+				state_index <= 3'd0;
+				isRead <= 1'b0;
+				isWrite <= 1'b0;
+			end
+		else
+			case (state_index)
+				3'd0:
+					if (!Empty_Sig)
+						state_index <= state_index + 1'b1;
+				
+				3'd1:
+					begin
+						isRead <= 1'b1;
+						state_index <= state_index + 1'b1;
+					end
+					
+				3'd2:
+					begin
+						isRead <= 1'b0;
+						state_index <= state_index + 1'b1;
+					end
+				
+				3'd3:
+					if (!Full_Sig)
+						state_index <= state_index + 1'b1;
+				
+				3'd4:
+					begin
+						isWrite <= 1'b1;
+						state_index <= state_index + 1'b1;
+					end
+				
+				3'd5:
+					begin
+						isWrite <= 1'b0;
+						state_index <= 3'd0;
+					end
+			endcase
+			
+	
+	////////////////////////////////////////////////////////
+	
+	assign Read_Req_Sig = isRead;
+	assign Write_Req_Sig = isWrite;
+	assign FIFO_Write_Data = FIFO_Read_Data;
+	
+	
+endmodule

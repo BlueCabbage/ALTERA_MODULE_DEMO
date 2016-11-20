@@ -1,0 +1,12 @@
+
+State Machine - |BUZZER_INTERFACE_DEMO|BUZZER_INTERFACE:U1|BUZZER_CTL_MODULE:U3|isStart
+Name isStart.00 isStart.10 isStart.01 
+isStart.00 0 0 0 
+isStart.01 1 0 1 
+isStart.10 1 1 0 
+
+State Machine - |BUZZER_INTERFACE_DEMO|BUZZER_INTERFACE:U1|BUZZER_CTL_MODULE:U3|rCmd
+Name rCmd.00 rCmd.10 rCmd.01 
+rCmd.00 0 0 0 
+rCmd.01 1 0 1 
+rCmd.10 1 1 0 
